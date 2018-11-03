@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Coz-1N-2Bu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0YY-gY-ghW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -403,22 +403,6 @@
             </objects>
             <point key="canvasLocation" x="-978.39999999999998" y="454.72263868065971"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="urj-SM-WzK">
-            <objects>
-                <navigationController id="Coz-1N-2Bu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="afm-MG-CPq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="0YY-gY-ghW" kind="relationship" relationship="rootViewController" id="ilh-1B-PZh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gdy-1J-bWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2879" y="-341"/>
-        </scene>
         <!--Landing View Controller-->
         <scene sceneID="RMx-cY-nmR">
             <objects>
@@ -428,14 +412,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_welcome_page_final" translatesAutoresizingMaskIntoConstraints="NO" id="prg-c4-nfO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="667"/>
                             </imageView>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-Sk-K4J">
-                                <rect key="frame" x="33" y="87" width="309" height="513"/>
+                                <rect key="frame" x="33" y="43" width="309" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Giu-j7-ys1">
-                                <rect key="frame" x="72" y="375.5" width="231" height="60"/>
+                                <rect key="frame" x="72" y="353.5" width="231" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="231" id="fSW-vw-cgd"/>
                                 </constraints>
@@ -445,7 +429,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGW-PZ-HH9">
-                                <rect key="frame" x="72" y="285.5" width="231" height="60"/>
+                                <rect key="frame" x="72" y="263.5" width="231" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="231" id="F9e-ov-dWZ"/>
                                     <constraint firstAttribute="height" constant="60" id="aif-LM-fZJ"/>
@@ -457,7 +441,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbh-bu-Wcm">
-                                <rect key="frame" x="91.5" y="465.5" width="192" height="24"/>
+                                <rect key="frame" x="91.5" y="443.5" width="192" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="WXN-lB-FqL"/>
                                     <constraint firstAttribute="width" constant="192" id="tgt-eb-1I0"/>
@@ -468,7 +452,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Welcome_logo" translatesAutoresizingMaskIntoConstraints="NO" id="MtY-iF-3nt">
-                                <rect key="frame" x="67.5" y="123" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="79" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="8cv-Kv-UMu"/>
                                     <constraint firstAttribute="height" constant="128" id="9e1-TK-QX1"/>
@@ -599,43 +583,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply to be an Angel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sao-lK-GVr">
-                                <rect key="frame" x="108" y="97" width="159" height="21"/>
+                                <rect key="frame" x="108" y="53" width="159" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ZX-b0-m4O">
-                                <rect key="frame" x="74.5" y="215" width="226" height="30"/>
+                                <rect key="frame" x="74.5" y="171" width="226" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Maiden Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXA-JJ-lb4">
-                                <rect key="frame" x="74.5" y="272" width="226" height="30"/>
+                                <rect key="frame" x="74.5" y="228" width="226" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vqn-aS-r0f">
-                                <rect key="frame" x="74.5" y="369" width="226" height="30"/>
+                                <rect key="frame" x="74.5" y="325" width="226" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ki3-bB-e9D">
-                                <rect key="frame" x="74.5" y="318" width="226" height="30"/>
+                                <rect key="frame" x="74.5" y="274" width="226" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V7y-GU-VxJ">
-                                <rect key="frame" x="74.5" y="416" width="226" height="30"/>
+                                <rect key="frame" x="74.5" y="372" width="226" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1o-TJ-Ddp">
-                                <rect key="frame" x="171.5" y="476" width="32" height="30"/>
+                                <rect key="frame" x="171.5" y="432" width="32" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="gotoNext:" destination="myy-Uz-vrl" eventType="touchUpInside" id="xqs-wF-NhI"/>
@@ -643,7 +627,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odb-IA-f0P">
-                                <rect key="frame" x="74.5" y="152" width="226" height="30"/>
+                                <rect key="frame" x="74.5" y="108" width="226" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="226" id="CSE-Op-3BH"/>
                                 </constraints>
@@ -753,9 +737,8 @@
         <image name="twitter_icon" width="48" height="49"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rMG-Oz-e84"/>
-        <segue reference="RPc-tX-Jjx"/>
-        <segue reference="k4v-ju-U38"/>
+        <segue reference="o2z-m1-Rdp"/>
+        <segue reference="YLF-Pg-rw4"/>
         <segue reference="2hF-9V-miN"/>
     </inferredMetricsTieBreakers>
 </document>
