@@ -10,7 +10,6 @@ class MessagingViewController: UIViewController {
     
     private var channel: SBDOpenChannel?
     private var sbdApplicationId = ProcessInfo.processInfo.environment["SENDBIRD_APP_ID"] ?? ""
-    private var personInNeedHandle = "PERSON_IN_NEED"
     private var channelUrl = "test"
     private var timer = Timer()
     private var progressVal = 00.0
@@ -34,7 +33,7 @@ class MessagingViewController: UIViewController {
 
     func processDummyMessagesOnTestChannel(){
         SBDMain.initWithApplicationId(sbdApplicationId)
-        SBDMain.connect(withUserId: personInNeedHandle) { (user, error) in
+        SBDMain.connect(withUserId: UserSession.sharedInstance.getHandle()) { (user, error) in
             guard error == nil else {    // Error.
                 print(error?.description)
                 return
