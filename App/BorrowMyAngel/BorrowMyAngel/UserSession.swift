@@ -31,7 +31,7 @@ class UserSession {
         if(isAngel()) {
             return userSessionHandle
         } else {
-            return "Person_In_Need" + NSUUID().uuidString
+            return "PIN " + NSUUID().uuidString
         }
     }
 

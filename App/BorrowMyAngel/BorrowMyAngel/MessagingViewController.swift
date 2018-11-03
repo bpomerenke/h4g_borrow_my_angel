@@ -88,7 +88,7 @@ class MessagingViewController: UIViewController {
         switch with {
         case let userMessage as SBDUserMessage:
             print("error adding message: \(String(describing: userMessage.message))")
-            let messageSender = UserSession.sharedInstance.getHandle() == userMessage.sender!.userId ? "you" : userMessage.sender!.userId
+            let messageSender = UserSession.sharedInstance.getHandle() == userMessage.sender!.userId ? "you" : UserSession.sharedInstance.isAngel() ? "PIN" : userMessage.sender!.userId
             
             messages.append(MessageItem(sender: messageSender, text: userMessage.message!))
             self.messageTableView.reloadData()
