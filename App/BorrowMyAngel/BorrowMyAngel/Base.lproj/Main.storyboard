@@ -423,6 +423,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="JQR-Jw-y2E"/>
                     <connections>
+                        <outlet property="shadowView" destination="edG-Pg-0Ky" id="4YL-F1-duL"/>
                         <outlet property="typeSelector" destination="lft-0B-oZA" id="r5k-LR-AKr"/>
                         <segue destination="ghU-Kr-Qzh" kind="showDetail" identifier="angelSegue" id="rMG-Oz-e84"/>
                         <segue destination="49e-Tb-3d3" kind="showDetail" identifier="personInNeedSegue" id="RPc-tX-Jjx"/>
@@ -526,6 +527,9 @@
                         <viewLayoutGuide key="safeArea" id="VCa-NR-GLI"/>
                     </view>
                     <navigationItem key="navigationItem" id="THy-xt-Ppd"/>
+                    <connections>
+                        <outlet property="shadowView" destination="Hfl-Sk-K4J" id="xpN-jc-ihZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwp-ig-mro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

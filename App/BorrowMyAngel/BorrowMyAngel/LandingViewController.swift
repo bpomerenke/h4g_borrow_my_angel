@@ -10,9 +10,10 @@ import UIKit
 
 class LandingViewController: UIViewController {
 
+    @IBOutlet weak var shadowView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        shadowView.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
     

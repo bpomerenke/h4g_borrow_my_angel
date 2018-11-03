@@ -2,10 +2,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var typeSelector: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        shadowView.layer.cornerRadius = 10
         typeSelector.backgroundColor = .clear
         typeSelector.tintColor = .clear
         
