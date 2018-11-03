@@ -389,10 +389,10 @@
             </objects>
             <point key="canvasLocation" x="-2879" y="-341"/>
         </scene>
-        <!--View Controller-->
+        <!--Landing View Controller-->
         <scene sceneID="RMx-cY-nmR">
             <objects>
-                <viewController id="0YY-gY-ghW" sceneMemberID="viewController">
+                <viewController id="0YY-gY-ghW" customClass="LandingViewController" customModule="BorrowMyAngel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bua-Az-ON5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -404,6 +404,7 @@
                                 </constraints>
                                 <state key="normal" image="chat_as_guest"/>
                                 <connections>
+                                    <action selector="loginAnonymously:" destination="0YY-gY-ghW" eventType="touchUpInside" id="teW-34-jOm"/>
                                     <segue destination="49e-Tb-3d3" kind="show" id="exo-8Q-PZq"/>
                                 </connections>
                             </button>
