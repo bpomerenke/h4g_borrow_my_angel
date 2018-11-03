@@ -8,65 +8,40 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var progress: UIProgressView!
-    @IBOutlet weak var connectionStatus: UILabel!
+class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+   
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var connectDescription: UILabel!
-    @IBOutlet weak var messageView: UITextView!
-    @IBOutlet weak var messageInput: UITextField!
-    @IBOutlet weak var messageSend: UIButton!
+    @IBOutlet weak var issuePicker: UIPickerView!
     
-    var timer = Timer()
-    var progressVal = 00.0
+    var issueData: [String] = ["Depression", "I'm feeling sad", "I'm having a rough day", "Physical Abuse", "Mental Abuse", "Substance Abuse"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.messageInput.delegate = self
-        self.progress.progress = 00.75
-    }
-    
-    @IBAction func connectNow(_ sender: Any) {
-        self.progress.isHidden = false
-        self.connectionStatus.isHidden = false
-        self.connectButton.isHidden = true
-        self.connectDescription.isHidden = true
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (Timer) in
-            self.progressVal += 1
-            self.progress.progress = Float(self.progressVal / 100.0)
-            
-            if self.progressVal >= 100 {
-                Timer   .invalidate()
-                self.connectionStatus.text = "Found"
-                self.showMessageView()
-            }
-        })
-    }
-    
-    @IBAction func sendMessage(_ sender: Any) {
-        let messageText = self.messageInput.text!
-        self.messageView.text.append("\nme: \(messageText)")
-        self.messageInput.text = ""
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (Timer) in
-            
-            self.messageView.text.append("\nangel: I hear you...how can I help?")
-        })
+        self.issuePicker.delegate = self
+        self.issuePicker.dataSource = self
+     
     }
     
-    func showMessageView()->Void{
-        self.messageSend.isHidden = false
-        self.messageView.isHidden = false
-        self.messageInput.isHidden = false
-        self.progress.isHidden = true
+    @IBAction func comeBack(unwindSegue: UIStoryboardSegue){
+        print("did it...came back")
+    }
+    @IBAction func connectNow(_ sender: Any) {
+
     }
     
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        messageInput.resignFirstResponder()
-        return true
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return issueData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return issueData[row]
+    }
+
 }
 
 
