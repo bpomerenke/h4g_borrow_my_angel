@@ -87,7 +87,8 @@ class MessagingViewController: UIViewController {
         switch with {
         case let userMessage as SBDUserMessage:
             print(userMessage.message)
-            messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
+            let messageSender = UserSession.sharedInstance.getHandle() == userMessage.sender!.userId ? "you" : userMessage.sender!.userId
+            messageView.text.append(contentsOf: "\n\(messageSender): \(userMessage.message!)")
         default:
             print("Error")
         }
@@ -95,7 +96,7 @@ class MessagingViewController: UIViewController {
 
     @IBAction func sendMessage(_ sender: Any) {
         let messageText = self.messageInput.text!
-        self.messageView.text.append("\nme: \(messageText)")
+        self.messageView.text.append("\nyou: \(messageText)")
         self.messageInput.text = ""
         self.channel?.sendUserMessage(messageText, data: "", customType: "", completionHandler: { (message, error) in
             guard error == nil else {    // Error.
