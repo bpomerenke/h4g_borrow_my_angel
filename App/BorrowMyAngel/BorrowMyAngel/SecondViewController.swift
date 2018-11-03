@@ -19,19 +19,19 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     var resourceResults: [resourceType] = []
-    var resultsB: [resourceType] = [resourceType(name: "food", resources: [resouceItem(title: "foo"),
-                                                                           resouceItem(title: "bar"),
-                                                                           resouceItem(title: "baz")]),
-                                    resourceType(name: "housing", resources: [resouceItem(title: "bar")]),
-                                    resourceType(name: "therapy", resources: [resouceItem(title: "a"),
-                                                                              resouceItem(title: "c")])]
+    var resultsB: [resourceType] = [resourceType(name: "food", resources: [resouceItem(title: "mcdonalds"),
+                                                                           resouceItem(title: "kitchen"),
+                                                                           resouceItem(title: "pizza hut")]),
+                                    resourceType(name: "clothing", resources: [resouceItem(title: "good will")]),
+                                    resourceType(name: "financial", resources: [resouceItem(title: "bank of america"),
+                                                                              resouceItem(title: "commerce bank")])]
     
-    var resultsA: [resourceType] = [resourceType(name: "food", resources: [resouceItem(title: "foo"),
-                                                                                  resouceItem(title: "bar"),
-                                                                                  resouceItem(title: "baz")]),
-                                           resourceType(name: "housing", resources: [resouceItem(title: "bar")]),
-                                           resourceType(name: "therapy", resources: [resouceItem(title: "a"),
-                                                                                     resouceItem(title: "c")])]
+    var resultsA: [resourceType] = [resourceType(name: "food", resources: [resouceItem(title: "civil"),
+                                                                                  resouceItem(title: "petes pizza"),
+                                                                                  resouceItem(title: "waffle house")]),
+                                           resourceType(name: "housing", resources: [resouceItem(title: "missouri hotel")]),
+                                           resourceType(name: "therapy", resources: [resouceItem(title: "dr doe"),
+                                                                                     resouceItem(title: "health services")])]
 
     @IBOutlet weak var noResultsLabel: UILabel!
     @IBOutlet weak var searchInput: UITextField!
@@ -40,9 +40,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         self.searchResults.delegate = self
         self.searchResults.dataSource = self
+        self.searchInput.delegate = self
     }
 
     @IBAction func search(_ sender: Any) {
+        searchInput.resignFirstResponder()
         let searchTerm = self.searchInput.text!
         
         resourceResults = []
