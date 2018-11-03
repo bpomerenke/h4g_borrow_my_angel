@@ -3,6 +3,8 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var userHandle: UITextField!
+    @IBOutlet weak var userPassword: UITextField!
     @IBOutlet weak var typeSelector: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,12 @@ class LoginViewController: UIViewController {
             NSAttributedString.Key.underlineColor: UIColor.init(red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0),
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue
             ], for: .selected)
+
+        userHandle.delegate = self
+        userPassword.delegate = self
+
+        userHandle.tag = 0
+        userPassword.tag = 1
     }
     
     @IBAction func gotoCauseMomentum(_ sender: Any) {
@@ -31,11 +39,29 @@ class LoginViewController: UIViewController {
     
     @IBAction func signIn(_ sender: Any) {
         if self.typeSelector.selectedSegmentIndex == 0 {
-            UserSession.sharedInstance.setHandle(handle: "ANGEL")
+            UserSession.sharedInstance.setHandle(handle: self.userHandle.text)
             self.performSegue(withIdentifier: "angelSegue", sender: self)
         } else {
-            UserSession.sharedInstance.setHandle(handle: "PERSON_IN_NEED")
+            UserSession.sharedInstance.setHandle()
             self.performSegue(withIdentifier: "personInNeedSegue", sender: self)
         }
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        userHandle.resignFirstResponder()
+        userPassword.resignFirstResponder()
+
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+            return true
+        }
+        // Do not add a line break
+        return false
     }
 }
