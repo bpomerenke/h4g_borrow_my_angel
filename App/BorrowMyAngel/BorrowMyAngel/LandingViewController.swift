@@ -10,14 +10,15 @@ import UIKit
 
 class LandingViewController: UIViewController {
 
+    @IBOutlet weak var shadowView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        shadowView.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
     
     @IBAction func loginAnonymously(_ sender: Any) {
-        UserSession.sharedInstance.setHandle(handle: "PERSON_IN_NEED")
+        UserSession.sharedInstance.setHandle()
     }
     
     @IBAction func share(_ sender: Any) {
