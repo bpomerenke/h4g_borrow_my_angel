@@ -19,22 +19,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEj-Tx-sHJ">
-                                <rect key="frame" x="109" y="279" width="157" height="80"/>
+                                <rect key="frame" x="88" y="279" width="199.5" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="157" id="EZv-Jg-4fQ"/>
                                     <constraint firstAttribute="height" constant="80" id="yUn-8B-oaX"/>
                                 </constraints>
                                 <state key="normal" title="Connect" backgroundImage="first">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="connectNow:" destination="9pv-A4-QxB" eventType="touchUpInside" id="5CX-uu-T5s"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request Connection with Angel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="65" y="384" width="245" height="17"/>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-lq-f9K">
+                                <rect key="frame" x="87.5" y="80" width="200" height="2"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="245" id="KIb-2S-bfY"/>
+                                    <constraint firstAttribute="width" constant="200" id="dGb-ZB-ciX"/>
                                 </constraints>
+                            </progressView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request Connection with Angel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
+                                <rect key="frame" x="86.5" y="384" width="202.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbn-nN-NXw">
+                                <rect key="frame" x="87" y="51" width="91" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="Rfm-L5-KcD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -43,12 +57,23 @@
                             <constraint firstItem="DEj-Tx-sHJ" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="0Dt-38-eaI"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="leading" secondItem="DEj-Tx-sHJ" secondAttribute="trailing" constant="-201" id="Gfd-UX-A5Y"/>
                             <constraint firstItem="DEj-Tx-sHJ" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="Hke-Bk-SVN"/>
+                            <constraint firstItem="bbn-nN-NXw" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="87" id="LGu-PA-qlP"/>
+                            <constraint firstItem="xCn-lq-f9K" firstAttribute="leading" secondItem="bbn-nN-NXw" secondAttribute="trailing" constant="-90.5" id="f95-27-iik"/>
+                            <constraint firstItem="bbn-nN-NXw" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="31" id="jrt-im-ggz"/>
+                            <constraint firstItem="xCn-lq-f9K" firstAttribute="top" secondItem="bbn-nN-NXw" secondAttribute="bottom" constant="8" symbolic="YES" id="lNm-Oj-LSY"/>
+                            <constraint firstItem="xCn-lq-f9K" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="ljy-x2-lDi"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="DEj-Tx-sHJ" secondAttribute="bottom" constant="25" id="o2K-WQ-WvD"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="rLn-bv-IaE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Connect" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="connectButton" destination="DEj-Tx-sHJ" id="9Vz-Rm-hY9"/>
+                        <outlet property="connectDescription" destination="A5M-7J-77L" id="6tx-ng-AiW"/>
+                        <outlet property="connectionStatus" destination="bbn-nN-NXw" id="WFH-CC-6xT"/>
+                        <outlet property="progress" destination="xCn-lq-f9K" id="btd-0Q-GBp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
