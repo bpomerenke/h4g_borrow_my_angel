@@ -44,38 +44,40 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
                 print(error?.description)
                 return
             }
-        }
-        //        SBDOpenChannel.createChannel { (channel, error) in
-        SBDOpenChannel.getWithUrl("test") { (channel, error) in
-            guard error == nil else {    // Error.
-                return
-            }
-
-            channel?.enter(completionHandler: { (error) in
+            //        SBDOpenChannel.createChannel { (channel, error) in
+            SBDOpenChannel.getWithUrl("test") { (channel, error) in
                 guard error == nil else {    // Error.
                     print(error?.description)
                     return
                 }
 
-                let previousMessageQuery = channel?.createPreviousMessageListQuery()
-                previousMessageQuery?.loadPreviousMessages(withLimit: 30, reverse: true, completionHandler: { (messages, error) in
+                channel?.enter(completionHandler: { (error) in
                     guard error == nil else {    // Error.
+                        print(error?.description)
                         return
                     }
 
-                    for message in messages! {
-                        switch message {
-                        case let userMessage as SBDUserMessage:
-                            print(userMessage.message)
-                            self.messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
-                        default:
-                            print("Error")
+                    let previousMessageQuery = channel?.createPreviousMessageListQuery()
+                    previousMessageQuery?.loadPreviousMessages(withLimit: 30, reverse: true, completionHandler: { (messages, error) in
+                        guard error == nil else {    // Error.
+                            print(error?.description)
+                            return
                         }
-                    }
-                })
 
-                self.channel = channel
-            })
+                        for message in messages! {
+                            switch message {
+                            case let userMessage as SBDUserMessage:
+                                print(userMessage.message)
+                                self.messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
+                            default:
+                                print("Error")
+                            }
+                        }
+                    })
+
+                    self.channel = channel
+                })
+            }
         }
     }
 
@@ -85,6 +87,7 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
         self.messageInput.text = ""
         self.channel?.sendUserMessage(messageText, data: "", customType: "", completionHandler: { (message, error) in
             guard error == nil else {    // Error.
+                print(error?.description)
                 return
             }            
         })
