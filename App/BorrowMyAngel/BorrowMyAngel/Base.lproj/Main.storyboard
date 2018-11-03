@@ -105,7 +105,6 @@
                         <outlet property="connectionStatus" destination="bbn-nN-NXw" id="WFH-CC-6xT"/>
                         <outlet property="messageInput" destination="039-vg-Thr" id="llo-2X-nll"/>
                         <outlet property="messageSend" destination="gxU-mW-Hmc" id="y5K-cg-4lV"/>
-                        <outlet property="messageView" destination="u2K-nl-tGW" id="Jjy-af-VDh"/>
                         <outlet property="progress" destination="xCn-lq-f9K" id="btd-0Q-GBp"/>
                         <outlet property="severityInput" destination="xSW-fv-p5z" id="jq5-No-VMC"/>
                         <outlet property="severitySlider" destination="SUy-jK-QJc" id="4OX-GH-5Ok"/>
@@ -123,12 +122,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" keyboardDismissMode="interactive" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2K-nl-tGW">
-                                <rect key="frame" x="19" y="78" width="337" height="521"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="039-vg-Thr">
                                 <rect key="frame" x="22" y="617" width="299" height="30"/>
                                 <nil key="textColor"/>
@@ -166,32 +159,77 @@
                                     <constraint firstAttribute="width" constant="200" id="dGb-ZB-ciX"/>
                                 </constraints>
                             </progressView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LsH-2L-t1Y">
+                                <rect key="frame" x="16" y="89" width="343" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCellView" rowHeight="114" id="jzE-VY-Rst" customClass="MessageTableViewCell" customModule="BorrowMyAngel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="114"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jzE-VY-Rst" id="ShJ-LU-yGw">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="113.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqe-Zd-0v9">
+                                                    <rect key="frame" x="88" y="11" width="42" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="Ack-m3-CuD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ANGEL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXo-uz-uaX">
+                                                    <rect key="frame" x="15" y="11" width="60" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="ypb-AU-1Ep"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HXo-uz-uaX" firstAttribute="leading" secondItem="ShJ-LU-yGw" secondAttribute="leadingMargin" id="ZAI-Uc-Tww"/>
+                                                <constraint firstItem="HXo-uz-uaX" firstAttribute="top" secondItem="ShJ-LU-yGw" secondAttribute="topMargin" id="axE-pJ-bVH"/>
+                                                <constraint firstItem="Bqe-Zd-0v9" firstAttribute="leading" secondItem="HXo-uz-uaX" secondAttribute="trailing" constant="13" id="ryq-2v-OO6"/>
+                                                <constraint firstItem="Bqe-Zd-0v9" firstAttribute="top" secondItem="ShJ-LU-yGw" secondAttribute="top" constant="11" id="uxO-PQ-tkO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageSender" destination="HXo-uz-uaX" id="t9V-7M-Tys"/>
+                                            <outlet property="messageText" destination="Bqe-Zd-0v9" id="PcT-mH-JJg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="039-vg-Thr" firstAttribute="top" secondItem="LsH-2L-t1Y" secondAttribute="bottom" constant="8" id="710-Lu-U3O"/>
                             <constraint firstItem="039-vg-Thr" firstAttribute="leading" secondItem="DbH-W8-g80" secondAttribute="leading" constant="22" id="7lt-BM-lnw"/>
                             <constraint firstItem="DbH-W8-g80" firstAttribute="bottom" secondItem="039-vg-Thr" secondAttribute="bottom" constant="20" id="CUZ-Kg-Dcd"/>
-                            <constraint firstItem="DbH-W8-g80" firstAttribute="trailing" secondItem="u2K-nl-tGW" secondAttribute="trailing" constant="19" id="FTw-fc-c9q"/>
+                            <constraint firstItem="LsH-2L-t1Y" firstAttribute="leading" secondItem="xCn-lq-f9K" secondAttribute="trailing" constant="-271.5" id="EBc-5p-kd0"/>
                             <constraint firstItem="xCn-lq-f9K" firstAttribute="centerX" secondItem="DbH-W8-g80" secondAttribute="centerX" id="JYk-wj-YXn"/>
-                            <constraint firstItem="u2K-nl-tGW" firstAttribute="top" secondItem="xCn-lq-f9K" secondAttribute="bottom" constant="8" id="KBp-rY-wAd"/>
+                            <constraint firstItem="LsH-2L-t1Y" firstAttribute="top" secondItem="xCn-lq-f9K" secondAttribute="bottom" constant="19" id="RYy-Jf-K9k"/>
                             <constraint firstItem="94h-AT-COH" firstAttribute="centerY" secondItem="bbn-nN-NXw" secondAttribute="centerY" id="Ss8-uE-75Q"/>
                             <constraint firstItem="bbn-nN-NXw" firstAttribute="top" secondItem="DbH-W8-g80" secondAttribute="top" constant="17" id="XoF-L7-dxB"/>
+                            <constraint firstItem="LsH-2L-t1Y" firstAttribute="centerX" secondItem="DbH-W8-g80" secondAttribute="centerX" id="Y9N-4B-iwJ"/>
                             <constraint firstItem="DbH-W8-g80" firstAttribute="trailing" secondItem="gxU-mW-Hmc" secondAttribute="trailing" constant="10" id="Z2l-qE-bz3"/>
                             <constraint firstItem="gxU-mW-Hmc" firstAttribute="centerY" secondItem="039-vg-Thr" secondAttribute="centerY" id="ZqF-hD-Jui"/>
-                            <constraint firstItem="u2K-nl-tGW" firstAttribute="centerX" secondItem="DbH-W8-g80" secondAttribute="centerX" id="b5u-f2-0g4"/>
                             <constraint firstItem="xCn-lq-f9K" firstAttribute="top" secondItem="bbn-nN-NXw" secondAttribute="bottom" constant="10" id="guw-vk-ah0"/>
-                            <constraint firstItem="039-vg-Thr" firstAttribute="top" secondItem="u2K-nl-tGW" secondAttribute="bottom" constant="18" id="hPb-6G-ETX"/>
+                            <constraint firstItem="DbH-W8-g80" firstAttribute="trailing" secondItem="LsH-2L-t1Y" secondAttribute="trailing" constant="16" id="mre-cS-bJF"/>
                             <constraint firstItem="bbn-nN-NXw" firstAttribute="centerX" secondItem="DbH-W8-g80" secondAttribute="centerX" id="sDr-P2-k8p"/>
                             <constraint firstItem="gxU-mW-Hmc" firstAttribute="leading" secondItem="039-vg-Thr" secondAttribute="trailing" constant="8" id="twL-OX-zn0"/>
+                            <constraint firstItem="LsH-2L-t1Y" firstAttribute="leading" secondItem="DbH-W8-g80" secondAttribute="leading" constant="16" id="xpt-hR-4iY"/>
                             <constraint firstItem="94h-AT-COH" firstAttribute="leading" secondItem="DbH-W8-g80" secondAttribute="leading" constant="19" id="xqH-Ai-wVs"/>
-                            <constraint firstItem="u2K-nl-tGW" firstAttribute="leading" secondItem="DbH-W8-g80" secondAttribute="leading" constant="19" id="zkI-V0-tOR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DbH-W8-g80"/>
                     </view>
                     <connections>
                         <outlet property="connectionStatus" destination="bbn-nN-NXw" id="psp-3U-4Fq"/>
                         <outlet property="messageInput" destination="039-vg-Thr" id="N1G-DB-Ijs"/>
-                        <outlet property="messageView" destination="u2K-nl-tGW" id="GkZ-PT-L7y"/>
+                        <outlet property="messageTableView" destination="LsH-2L-t1Y" id="cnn-TZ-zNY"/>
                         <outlet property="progressBar" destination="xCn-lq-f9K" id="reN-RS-Gnl"/>
                     </connections>
                 </viewController>

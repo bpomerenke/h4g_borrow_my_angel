@@ -3,10 +3,12 @@ import SendBirdSDK
 
 class MessagingViewController: UIViewController {
     
+    
     @IBOutlet weak var messageView: UITextView!
     @IBOutlet weak var messageInput: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var connectionStatus: UILabel!
+    @IBOutlet weak var messageTableView: UITableView!
     
     private var channel: SBDOpenChannel?
     private var sbdApplicationId = ProcessInfo.processInfo.environment["SENDBIRD_APP_ID"] ?? ""
@@ -14,8 +16,17 @@ class MessagingViewController: UIViewController {
     private var timer = Timer()
     private var progressVal = 00.0
     
+    
+    struct MessageItem {
+        var sender: String
+        var text: String
+    }
+    var messages: [MessageItem] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.messageTableView.delegate = self
+        self.messageTableView.dataSource = self
         self.messageInput.delegate = self
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (Timer) in
             self.progressVal += 1
@@ -30,35 +41,33 @@ class MessagingViewController: UIViewController {
         processDummyMessagesOnTestChannel()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: MessagingViewController.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: MessagingViewController.keyboardWillHideNotification, object: nil)
-        messageView.layoutManager.allowsNonContiguousLayout = false
-        messageView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
 
     func processDummyMessagesOnTestChannel(){
         SBDMain.initWithApplicationId(sbdApplicationId)
         SBDMain.add(self, identifier: "messagingVC")
         SBDMain.connect(withUserId: UserSession.sharedInstance.getHandle()) { (user, error) in
-            guard error == nil else {    // Error.
-                print(error?.description)
+            guard error == nil else {
+                print("error connecting: \(String(describing: error?.description))")
                 return
             }
             //        SBDOpenChannel.createChannel { (channel, error) in
             SBDOpenChannel.getWithUrl(self.channelUrl) { (channel, error) in
-                guard error == nil else {    // Error.
-                    print(error?.description)
+                guard error == nil else {
+                    print("error getting channel with url: \(String(describing: error?.description))")
                     return
                 }
 
                 channel?.enter(completionHandler: { (error) in
-                    guard error == nil else {    // Error.
-                        print(error?.description)
+                    guard error == nil else {
+                        print("error entering channel: \(String(describing: error?.description))")
                         return
                     }
 
                     let previousMessageQuery = channel?.createPreviousMessageListQuery()
                     previousMessageQuery?.loadPreviousMessages(withLimit: 200, reverse: false, completionHandler: { (messages, error) in
-                        guard error == nil else {    // Error.
-                            print(error?.description)
+                        guard error == nil else {
+                            print("error loading previous messages: \(String(describing: error?.description))")
                             return
                         }
 
@@ -72,42 +81,37 @@ class MessagingViewController: UIViewController {
             }
         }
     }
-
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        var bottom = messageView.contentSize.height - messageView.frame.size.height
-        if bottom < 0 {
-            bottom = 0
-        }
-        if messageView.contentOffset.y != bottom {
-            messageView.setContentOffset(CGPoint(x: 0, y: bottom), animated: true)
-        }
-    }
-
+    
     func addMessageToView(with: SBDBaseMessage) {
         switch with {
         case let userMessage as SBDUserMessage:
-            print(userMessage.message)
+            print("error adding message: \(String(describing: userMessage.message))")
             let messageSender = UserSession.sharedInstance.getHandle() == userMessage.sender!.userId ? "you" : userMessage.sender!.userId
-            messageView.text.append(contentsOf: "\n\(messageSender): \(userMessage.message!)")
+            
+            messages.append(MessageItem(sender: messageSender, text: userMessage.message!))
+            self.messageTableView.reloadData()
+            self.messageTableView.scrollToRow(at: IndexPath(item:messages.count-1, section: 0), at: .bottom, animated: true)
         default:
             print("Error")
         }
     }
 
     @IBAction func sendMessage(_ sender: Any) {
-        let messageText = self.messageInput.text!
-        self.messageView.text.append("\nyou: \(messageText)")
-        self.messageInput.text = ""
+        let messageText = messageInput.text!
+        messageInput.text = ""
         self.channel?.sendUserMessage(messageText, data: "", customType: "", completionHandler: { (message, error) in
-            guard error == nil else {    // Error.
-                print(error?.description)
+            guard error == nil else {
+                print("error sending message: \(String(describing: error?.description))")
                 return
-            }            
+            }
+            
+            self.messages.append(MessageItem(sender: "you", text: messageText))
+            self.messageTableView.reloadData()
+            self.messageTableView.scrollToRow(at: IndexPath(item:self.messages.count-1, section: 0), at: .bottom, animated: true)
         })
     }
     
     private func showMessageView()->Void{
-        self.messageView.isHidden = false
         self.messageInput.isHidden = false
         self.progressBar.isHidden = true
     }
@@ -137,6 +141,24 @@ extension MessagingViewController: UITextFieldDelegate {
 extension MessagingViewController: SBDChannelDelegate {
     func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage) {
         addMessageToView(with: message)
+    }
+}
+
+extension MessagingViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCellView") as! MessageTableViewCell
+        
+        cell.messageSender.text = messages[indexPath.row].sender + ":"
+        cell.messageText.text = messages[indexPath.row].text
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return (CGFloat(messages[indexPath.row].text.count / 20) + 1) * 30 + 15
     }
 }
 
