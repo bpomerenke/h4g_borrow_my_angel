@@ -1,11 +1,9 @@
 import UIKit
 
 class ResourcesViewController: UIViewController {
-
-    
     var filteredResults = [ResourceType]()
     var resourceResults = LocalResources.allLocalResources
-    
+    var selectedItem: ResourceItem?
     let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet var resourcesTableView: UITableView!
@@ -55,12 +53,41 @@ class ResourcesViewController: UIViewController {
         resourcesTableView.reloadData()
     }
     
-    func isFiltering() -> Bool {
+    private func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "ShowResourceDetail" {
+            guard let resourceDetailViewController = segue.destination as? ResourceDetailViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedItemCell = sender as? UITableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = resourcesTableView.indexPath(for: selectedItemCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedItem = isFiltering() ? filteredResults[indexPath.section].resources[indexPath.row] : resourceResults[indexPath.section].resources[indexPath.row]
+            resourceDetailViewController.resourceItem = selectedItem
+        }
     }
 }
 
 extension ResourcesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var resourceItem: ResourceItem
+        if isFiltering() {
+            resourceItem = filteredResults[indexPath.section].resources[indexPath.row]
+        } else {
+            resourceItem = resourceResults[indexPath.section].resources[indexPath.row]
+        }
+    }
 }
 
 extension ResourcesViewController: UITableViewDataSource {

@@ -223,6 +223,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Hxr-EK-ceb" kind="show" identifier="ShowResourceDetail" id="kU9-II-sGp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -235,16 +238,16 @@
             </objects>
             <point key="canvasLocation" x="1660" y="-129"/>
         </scene>
-        <!--View Controller-->
+        <!--Resource Detail View Controller-->
         <scene sceneID="PUW-2l-cS1">
             <objects>
-                <viewController id="Hxr-EK-ceb" sceneMemberID="viewController">
+                <viewController id="Hxr-EK-ceb" customClass="ResourceDetailViewController" customModule="BorrowMyAngel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8C3-zV-yIR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK8-FB-oEK">
-                                <rect key="frame" x="166.5" y="57" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="101" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -257,10 +260,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Opd-Ip-YdM"/>
                     </view>
+                    <connections>
+                        <outlet property="resourceTitle" destination="tK8-FB-oEK" id="Gfc-ai-Uf1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxi-ll-Xfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2329" y="-40"/>
+            <point key="canvasLocation" x="2505" y="-38"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="olo-gj-Hv3">
