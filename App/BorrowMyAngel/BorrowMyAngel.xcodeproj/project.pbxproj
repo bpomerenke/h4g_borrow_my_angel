@@ -11,6 +11,7 @@
 		5A40C62C218D7804001E8412 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62B218D7804001E8412 /* MessagingViewController.swift */; };
 		5A40C62E218D7E64001E8412 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62D218D7E64001E8412 /* LoginViewController.swift */; };
 		5A460ABF218D8D1900FA77F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A460ABD218D8D1900FA77F7 /* Main.storyboard */; };
+		5A7FE0AE218D934B005F99A2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FE0AD218D934B005F99A2 /* Podfile */; };
 		5B10F67E218D062200344011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F67D218D062200344011 /* AppDelegate.swift */; };
 		5B10F680218D062300344011 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F67F218D062300344011 /* ConnectViewController.swift */; };
 		5B10F682218D062300344011 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F681218D062300344011 /* ResourcesViewController.swift */; };
@@ -31,9 +32,11 @@
 
 /* Begin PBXFileReference section */
 		4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelStatusViewController.swift; sourceTree = "<group>"; };
+		4CA1D90DABB7E8E4572F5D09 /* Pods-BorrowMyAngelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngelTests/Pods-BorrowMyAngelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A40C62B218D7804001E8412 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		5A40C62D218D7E64001E8412 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A460ABE218D8D1900FA77F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A7FE0AD218D934B005F99A2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5B10F67A218D062200344011 /* BorrowMyAngel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorrowMyAngel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10F67D218D062200344011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10F67F218D062300344011 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +47,9 @@
 		5B10F690218D062500344011 /* BorrowMyAngelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BorrowMyAngelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10F694218D062500344011 /* BorrowMyAngelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowMyAngelTests.swift; sourceTree = "<group>"; };
 		5B10F696218D062500344011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76859D8AAA5D73506A715117 /* Pods-BorrowMyAngel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngel/Pods-BorrowMyAngel.debug.xcconfig"; sourceTree = "<group>"; };
+		942CDBFFBFE5041612DABE1C /* Pods-BorrowMyAngel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngel.release.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngel/Pods-BorrowMyAngel.release.xcconfig"; sourceTree = "<group>"; };
+		D3255AC492C561FA04E931E5 /* Pods-BorrowMyAngelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngelTests/Pods-BorrowMyAngelTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +73,12 @@
 		5B10F671218D062200344011 = {
 			isa = PBXGroup;
 			children = (
+				5A7FE0AD218D934B005F99A2 /* Podfile */,
 				5B10F67C218D062200344011 /* BorrowMyAngel */,
 				5B10F693218D062500344011 /* BorrowMyAngelTests */,
 				5B10F67B218D062200344011 /* Products */,
+				5E0162B5DE4878EA6E5D1A37 /* Pods */,
+				6C2BF5A162FFC5D54B5DA8F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +117,24 @@
 			path = BorrowMyAngelTests;
 			sourceTree = "<group>";
 		};
+		5E0162B5DE4878EA6E5D1A37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76859D8AAA5D73506A715117 /* Pods-BorrowMyAngel.debug.xcconfig */,
+				942CDBFFBFE5041612DABE1C /* Pods-BorrowMyAngel.release.xcconfig */,
+				4CA1D90DABB7E8E4572F5D09 /* Pods-BorrowMyAngelTests.debug.xcconfig */,
+				D3255AC492C561FA04E931E5 /* Pods-BorrowMyAngelTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6C2BF5A162FFC5D54B5DA8F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B10F699218D062500344011 /* Build configuration list for PBXNativeTarget "BorrowMyAngel" */;
 			buildPhases = (
+				A1AE97C97E57A80C8F3CF2C8 /* [CP] Check Pods Manifest.lock */,
 				5B10F676218D062200344011 /* Sources */,
 				5B10F677218D062200344011 /* Frameworks */,
 				5B10F678218D062200344011 /* Resources */,
+				6DFBA330979AAEDBA8FAEE01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +161,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B10F69C218D062500344011 /* Build configuration list for PBXNativeTarget "BorrowMyAngelTests" */;
 			buildPhases = (
+				0A4C3F35FBDE1E7A77F7506F /* [CP] Check Pods Manifest.lock */,
 				5B10F68C218D062500344011 /* Sources */,
 				5B10F68D218D062500344011 /* Frameworks */,
 				5B10F68E218D062500344011 /* Resources */,
@@ -191,6 +221,7 @@
 			files = (
 				5A460ABF218D8D1900FA77F7 /* Main.storyboard in Resources */,
 				5B10F68A218D062500344011 /* LaunchScreen.storyboard in Resources */,
+				5A7FE0AE218D934B005F99A2 /* Podfile in Resources */,
 				5B10F687218D062500344011 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +234,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A4C3F35FBDE1E7A77F7506F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BorrowMyAngelTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DFBA330979AAEDBA8FAEE01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BorrowMyAngel/Pods-BorrowMyAngel-frameworks.sh",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BorrowMyAngel/Pods-BorrowMyAngel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1AE97C97E57A80C8F3CF2C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BorrowMyAngel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B10F676218D062200344011 /* Sources */ = {
@@ -374,6 +464,7 @@
 		};
 		5B10F69A218D062500344011 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76859D8AAA5D73506A715117 /* Pods-BorrowMyAngel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +483,7 @@
 		};
 		5B10F69B218D062500344011 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 942CDBFFBFE5041612DABE1C /* Pods-BorrowMyAngel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -410,6 +502,7 @@
 		};
 		5B10F69D218D062500344011 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CA1D90DABB7E8E4572F5D09 /* Pods-BorrowMyAngelTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -430,6 +523,7 @@
 		};
 		5B10F69E218D062500344011 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3255AC492C561FA04E931E5 /* Pods-BorrowMyAngelTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
