@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SendBirdSDK
 
 class MessagingViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,6 +16,10 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var connectionStatus: UILabel!
     
+    var channel: SBDOpenChannel?
+    var sbdApplicationId = "secret here"
+    var personInNeedHandle = "PERSON_IN_NEED"
+    var channelUrl = "test"
     
     var timer = Timer()
     var progressVal = 00.0
@@ -32,16 +37,62 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
                 self.showMessageView()
             }
         })
+        self.processDummyMessagesOnTestChannel()
     }
-    
+
+    func processDummyMessagesOnTestChannel(){
+        SBDMain.initWithApplicationId(self.sbdApplicationId)
+        SBDMain.connect(withUserId: self.personInNeedHandle) { (user, error) in
+            guard error == nil else {    // Error.
+                print(error?.description)
+                return
+            }
+            //        SBDOpenChannel.createChannel { (channel, error) in
+            SBDOpenChannel.getWithUrl(self.channelUrl) { (channel, error) in
+                guard error == nil else {    // Error.
+                    print(error?.description)
+                    return
+                }
+
+                channel?.enter(completionHandler: { (error) in
+                    guard error == nil else {    // Error.
+                        print(error?.description)
+                        return
+                    }
+
+                    let previousMessageQuery = channel?.createPreviousMessageListQuery()
+                    previousMessageQuery?.loadPreviousMessages(withLimit: 200, reverse: false, completionHandler: { (messages, error) in
+                        guard error == nil else {    // Error.
+                            print(error?.description)
+                            return
+                        }
+
+                        for message in messages! {
+                            switch message {
+                            case let userMessage as SBDUserMessage:
+                                print(userMessage.message)
+                                self.messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
+                            default:
+                                print("Error")
+                            }
+                        }
+                    })
+
+                    self.channel = channel
+                })
+            }
+        }
+    }
+
     @IBAction func sendMessage(_ sender: Any) {
         let messageText = self.messageInput.text!
         self.messageView.text.append("\nme: \(messageText)")
         self.messageInput.text = ""
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (Timer) in
-            
-            self.messageView.text.append("\nangel: I hear you...how can I help?")
+        self.channel?.sendUserMessage(messageText, data: "", customType: "", completionHandler: { (message, error) in
+            guard error == nil else {    // Error.
+                print(error?.description)
+                return
+            }            
         })
     }
     
