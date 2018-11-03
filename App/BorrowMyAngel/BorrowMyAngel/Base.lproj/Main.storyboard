@@ -280,51 +280,121 @@
             </objects>
             <point key="canvasLocation" x="925.60000000000002" y="-289.20539730134936"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="olo-gj-Hv3">
             <objects>
-                <viewController id="3PV-7c-ZW2" sceneMemberID="viewController">
+                <viewController id="3PV-7c-ZW2" customClass="LoginViewController" customModule="BorrowMyAngel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6z0-fc-3AB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30X-PQ-cSf">
-                                <rect key="frame" x="125.5" y="264" width="124" height="59"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edG-Pg-0Ky">
+                                <rect key="frame" x="9" y="80" width="357" height="547"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYm-L3-12b">
+                                        <rect key="frame" x="119" y="349" width="119" height="30"/>
+                                        <state key="normal" title="forgot password?">
+                                            <color key="titleColor" red="0.84313725490196079" green="0.71372549019607845" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cro-dn-yQW">
+                                        <rect key="frame" x="128" y="413" width="100" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="LkE-hO-5E5"/>
+                                            <constraint firstAttribute="height" constant="34" id="dQj-ed-zCE"/>
+                                        </constraints>
+                                        <state key="normal" image="cause_momentum"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="rha-dF-KfN"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="xit-Qn-uFe"/>
+                                    <constraint firstItem="cro-dn-yQW" firstAttribute="top" secondItem="VYm-L3-12b" secondAttribute="bottom" constant="34" id="Tqu-YA-TFC"/>
                                 </constraints>
-                                <state key="normal" title="Person in Need">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-Y1-z40">
+                                <rect key="frame" x="77.5" y="131" width="220" height="42"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="84J-Pk-Nfr"/>
+                                    <constraint firstAttribute="height" constant="42" id="QQ5-e2-PWR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-cf-zn5">
+                                <rect key="frame" x="57.5" y="241" width="260" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="ZOd-Sf-Xmn"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-IB-y2v">
+                                <rect key="frame" x="57.5" y="281" width="260" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="Amo-vd-l6z"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gor-fX-img">
+                                <rect key="frame" x="105" y="364" width="165" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="HMg-bS-pEc"/>
+                                    <constraint firstAttribute="width" constant="165" id="uLU-W0-dge"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Sign_in_button"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" id="RMj-Jp-dWe"/>
+                                    <action selector="signIn:" destination="3PV-7c-ZW2" eventType="touchUpInside" id="qLQ-O8-b8p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTK-w4-FEf">
-                                <rect key="frame" x="125.5" y="344" width="124" height="59"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Angel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ghU-Kr-Qzh" kind="presentation" id="vbH-1W-MDg"/>
-                                </connections>
-                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lft-0B-oZA">
+                                <rect key="frame" x="44.5" y="181" width="286" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="286" id="StD-CU-djm"/>
+                                    <constraint firstAttribute="height" constant="40" id="yak-4u-1kQ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="I'm an Angel"/>
+                                    <segment title="I'm in Need"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gTK-w4-FEf" firstAttribute="height" secondItem="30X-PQ-cSf" secondAttribute="height" id="3QM-F9-vqD"/>
-                            <constraint firstItem="30X-PQ-cSf" firstAttribute="top" secondItem="Z8e-Yr-rKb" secondAttribute="top" constant="200" id="KfR-cb-lTZ"/>
-                            <constraint firstItem="gTK-w4-FEf" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="PYd-cJ-9aZ"/>
-                            <constraint firstItem="gTK-w4-FEf" firstAttribute="width" secondItem="30X-PQ-cSf" secondAttribute="width" id="Vmg-Gc-JPW"/>
-                            <constraint firstItem="30X-PQ-cSf" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="f5C-PO-QrV"/>
-                            <constraint firstItem="gTK-w4-FEf" firstAttribute="top" secondItem="30X-PQ-cSf" secondAttribute="bottom" constant="21" id="fo3-db-GWa"/>
+                            <constraint firstItem="Gor-fX-img" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="0p0-7G-X3f"/>
+                            <constraint firstItem="edG-Pg-0Ky" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="3M5-gy-giI"/>
+                            <constraint firstItem="Gor-fX-img" firstAttribute="top" secondItem="bzH-IB-y2v" secondAttribute="bottom" constant="53" id="6Rc-hq-3Ry"/>
+                            <constraint firstItem="lft-0B-oZA" firstAttribute="top" secondItem="tb1-Y1-z40" secondAttribute="bottom" constant="8" id="7VH-Qz-oKI"/>
+                            <constraint firstItem="lft-0B-oZA" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="7WX-9j-S6o"/>
+                            <constraint firstItem="tb1-Y1-z40" firstAttribute="top" secondItem="Z8e-Yr-rKb" secondAttribute="top" constant="67" id="CLP-mi-ltD"/>
+                            <constraint firstItem="VYm-L3-12b" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="EEp-II-FVz"/>
+                            <constraint firstItem="cro-dn-yQW" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="ERE-Wn-PGO"/>
+                            <constraint firstItem="VYm-L3-12b" firstAttribute="top" secondItem="Gor-fX-img" secondAttribute="bottom" constant="7" id="Hc0-AT-rpS"/>
+                            <constraint firstItem="bzH-IB-y2v" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="Lfb-NP-8se"/>
+                            <constraint firstItem="tb1-Y1-z40" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="M0a-jz-QSJ"/>
+                            <constraint firstItem="edG-Pg-0Ky" firstAttribute="leading" secondItem="Z8e-Yr-rKb" secondAttribute="leading" constant="9" id="NJF-do-uDC"/>
+                            <constraint firstItem="UtC-cf-zn5" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="U46-GU-dih"/>
+                            <constraint firstItem="Z8e-Yr-rKb" firstAttribute="bottom" secondItem="edG-Pg-0Ky" secondAttribute="bottom" constant="40" id="cOu-8y-MQS"/>
+                            <constraint firstItem="UtC-cf-zn5" firstAttribute="top" secondItem="lft-0B-oZA" secondAttribute="bottom" constant="20" id="dwc-TH-kSM"/>
+                            <constraint firstItem="bzH-IB-y2v" firstAttribute="top" secondItem="UtC-cf-zn5" secondAttribute="bottom" constant="10" id="oNa-lt-v6w"/>
+                            <constraint firstItem="edG-Pg-0Ky" firstAttribute="top" secondItem="Z8e-Yr-rKb" secondAttribute="top" constant="16" id="qQy-BX-I36"/>
+                            <constraint firstItem="cro-dn-yQW" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="vzF-F8-zbw"/>
+                            <constraint firstItem="Z8e-Yr-rKb" firstAttribute="trailing" secondItem="edG-Pg-0Ky" secondAttribute="trailing" constant="9" id="xke-GB-CuZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z8e-Yr-rKb"/>
                     </view>
                     <navigationItem key="navigationItem" id="JQR-Jw-y2E"/>
+                    <connections>
+                        <outlet property="typeSelector" destination="lft-0B-oZA" id="r5k-LR-AKr"/>
+                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="angelSegue" id="jQO-SE-pcS"/>
+                        <segue destination="ghU-Kr-Qzh" kind="showDetail" identifier="personInNeedSegue" id="rMG-Oz-e84"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cd-6J-Ja6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,6 +420,7 @@
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -414,6 +485,7 @@
         <scene sceneID="s8d-W2-ijj">
             <objects>
                 <tabBarController id="ghU-Kr-Qzh" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h3m-nx-DWw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -430,6 +502,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Sign_in_button" width="700" height="242"/>
+        <image name="cause_momentum" width="169" height="66"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
