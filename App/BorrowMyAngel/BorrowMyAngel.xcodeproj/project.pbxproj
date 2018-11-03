@@ -13,12 +13,15 @@
 		5A460ABF218D8D1900FA77F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A460ABD218D8D1900FA77F7 /* Main.storyboard */; };
 		5A7FE0AE218D934B005F99A2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FE0AD218D934B005F99A2 /* Podfile */; };
 		5A7FE0B0218DFC3F005F99A2 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FE0AF218DFC3F005F99A2 /* UserSession.swift */; };
+		5A935CE0218E1E5500077597 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A935CDF218E1E5500077597 /* LandingViewController.swift */; };
 		5B10F67E218D062200344011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F67D218D062200344011 /* AppDelegate.swift */; };
 		5B10F680218D062300344011 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F67F218D062300344011 /* ConnectViewController.swift */; };
 		5B10F682218D062300344011 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F681218D062300344011 /* ResourcesViewController.swift */; };
 		5B10F687218D062500344011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B10F686218D062500344011 /* Assets.xcassets */; };
 		5B10F68A218D062500344011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B10F688218D062500344011 /* LaunchScreen.storyboard */; };
 		5B10F695218D062500344011 /* BorrowMyAngelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F694218D062500344011 /* BorrowMyAngelTests.swift */; };
+		5B214009218E23AD00AA5CA8 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B214008218E23AD00AA5CA8 /* Resources.swift */; };
+		5B21400C218E240C00AA5CA8 /* LocalResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B21400B218E240C00AA5CA8 /* LocalResources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,7 @@
 		5A460ABE218D8D1900FA77F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A7FE0AD218D934B005F99A2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5A7FE0AF218DFC3F005F99A2 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		5A935CDF218E1E5500077597 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		5B10F67A218D062200344011 /* BorrowMyAngel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorrowMyAngel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10F67D218D062200344011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10F67F218D062300344011 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		5B10F690218D062500344011 /* BorrowMyAngelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BorrowMyAngelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10F694218D062500344011 /* BorrowMyAngelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowMyAngelTests.swift; sourceTree = "<group>"; };
 		5B10F696218D062500344011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B214008218E23AD00AA5CA8 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		5B21400B218E240C00AA5CA8 /* LocalResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalResources.swift; sourceTree = "<group>"; };
 		76859D8AAA5D73506A715117 /* Pods-BorrowMyAngel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngel/Pods-BorrowMyAngel.debug.xcconfig"; sourceTree = "<group>"; };
 		942CDBFFBFE5041612DABE1C /* Pods-BorrowMyAngel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngel.release.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngel/Pods-BorrowMyAngel.release.xcconfig"; sourceTree = "<group>"; };
 		D3255AC492C561FA04E931E5 /* Pods-BorrowMyAngelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngelTests/Pods-BorrowMyAngelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +102,8 @@
 		5B10F67C218D062200344011 /* BorrowMyAngel */ = {
 			isa = PBXGroup;
 			children = (
+				5B21400A218E23FC00AA5CA8 /* Data */,
+				5B214007218E239F00AA5CA8 /* Models */,
 				5A460ABD218D8D1900FA77F7 /* Main.storyboard */,
 				5A40C62B218D7804001E8412 /* MessagingViewController.swift */,
 				5B10F67D218D062200344011 /* AppDelegate.swift */,
@@ -107,6 +115,7 @@
 				4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */,
 				5A40C62D218D7E64001E8412 /* LoginViewController.swift */,
 				5A7FE0AF218DFC3F005F99A2 /* UserSession.swift */,
+				5A935CDF218E1E5500077597 /* LandingViewController.swift */,
 			);
 			path = BorrowMyAngel;
 			sourceTree = "<group>";
@@ -118,6 +127,22 @@
 				5B10F696218D062500344011 /* Info.plist */,
 			);
 			path = BorrowMyAngelTests;
+			sourceTree = "<group>";
+		};
+		5B214007218E239F00AA5CA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B214008218E23AD00AA5CA8 /* Resources.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B21400A218E23FC00AA5CA8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5B21400B218E240C00AA5CA8 /* LocalResources.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		5E0162B5DE4878EA6E5D1A37 /* Pods */ = {
@@ -304,9 +329,12 @@
 			files = (
 				5A40C62E218D7E64001E8412 /* LoginViewController.swift in Sources */,
 				4538C3FB218D42960058F5D8 /* AngelStatusViewController.swift in Sources */,
+				5A935CE0218E1E5500077597 /* LandingViewController.swift in Sources */,
 				5B10F682218D062300344011 /* ResourcesViewController.swift in Sources */,
 				5A7FE0B0218DFC3F005F99A2 /* UserSession.swift in Sources */,
 				5B10F67E218D062200344011 /* AppDelegate.swift in Sources */,
+				5B21400C218E240C00AA5CA8 /* LocalResources.swift in Sources */,
+				5B214009218E23AD00AA5CA8 /* Resources.swift in Sources */,
 				5A40C62C218D7804001E8412 /* MessagingViewController.swift in Sources */,
 				5B10F680218D062300344011 /* ConnectViewController.swift in Sources */,
 			);

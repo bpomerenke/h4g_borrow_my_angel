@@ -1,25 +1,10 @@
 import UIKit
 
 class ResourcesViewController: UIViewController {
-    struct ResourceType {
-        var name: String
-        var resources: [ResourceItem]
-    }
-    struct ResourceItem {
-        var title: String
-        var zip: Int
-    }
+
     
     var filteredResults = [ResourceType]()
-    var resourceResults = [ResourceType(name: "food",
-                                        resources: [ResourceItem(title: "civil", zip: 65807),
-                                                    
-                                                    ResourceItem(title: "petes pizza", zip: 65807),
-                                                    
-                                                    ResourceItem(title: "waffle house", zip: 12345)]),
-                           ResourceType(name: "housing", resources: [ResourceItem(title: "missouri hotel", zip: 65802)]),
-                           ResourceType(name: "therapy", resources: [ResourceItem(title: "dr doe", zip: 65807),
-                                                                     ResourceItem(title: "health services", zip: 00000)])]
+    var resourceResults = LocalResources.allLocalResources
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -27,6 +12,7 @@ class ResourcesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Resources"
         resourcesTableView.delegate = self
         resourcesTableView.dataSource = self
         
@@ -120,7 +106,6 @@ extension ResourcesViewController: UITableViewDataSource {
 }
 
 extension ResourcesViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
