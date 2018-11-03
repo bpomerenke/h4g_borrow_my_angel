@@ -8,13 +8,85 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+    
+    struct resourceType {
+        var name: String
+        var resources: [resouceItem]
+    }
+    struct resouceItem {
+        var title: String
+    }
+    
+    var resourceResults: [resourceType] = []
+    var resultsB: [resourceType] = [resourceType(name: "food", resources: [resouceItem(title: "foo"),
+                                                                           resouceItem(title: "bar"),
+                                                                           resouceItem(title: "baz")]),
+                                    resourceType(name: "housing", resources: [resouceItem(title: "bar")]),
+                                    resourceType(name: "therapy", resources: [resouceItem(title: "a"),
+                                                                              resouceItem(title: "c")])]
+    
+    var resultsA: [resourceType] = [resourceType(name: "food", resources: [resouceItem(title: "foo"),
+                                                                                  resouceItem(title: "bar"),
+                                                                                  resouceItem(title: "baz")]),
+                                           resourceType(name: "housing", resources: [resouceItem(title: "bar")]),
+                                           resourceType(name: "therapy", resources: [resouceItem(title: "a"),
+                                                                                     resouceItem(title: "c")])]
 
+    @IBOutlet weak var noResultsLabel: UILabel!
+    @IBOutlet weak var searchInput: UITextField!
+    @IBOutlet weak var searchResults: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.searchResults.delegate = self
+        self.searchResults.dataSource = self
     }
 
-
+    @IBAction func search(_ sender: Any) {
+        let searchTerm = self.searchInput.text!
+        
+        resourceResults = []
+        if searchTerm == "a"{
+            resourceResults = resultsA
+        }
+        if searchTerm == "b"{
+            resourceResults = resultsB
+        }
+        
+        if resourceResults.count == 0 {
+            self.searchResults.isHidden = true
+            self.noResultsLabel.text = "No Results"
+            self.noResultsLabel.isHidden = false
+        } else {
+            self.searchResults.isHidden = false
+            self.noResultsLabel.isHidden = true
+        }
+        
+        self.searchResults.reloadData()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchInput.resignFirstResponder()
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return resourceResults[section].resources.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return resourceResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return resourceResults[section].name
+        
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resourceCell", for: indexPath)
+        
+        cell.textLabel?.text = resourceResults[indexPath.section].resources[indexPath.row].title
+        return cell
+    }
 }
 
