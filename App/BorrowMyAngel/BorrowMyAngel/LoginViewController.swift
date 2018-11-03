@@ -22,7 +22,12 @@ class LoginViewController: UIViewController {
             ], for: .selected)
     }
     
-
+    @IBAction func gotoCauseMomentum(_ sender: Any) {
+        if let link = URL(string: "https://causemomentum.org/projects/the-borrow-my-angel-foundation") {
+            UIApplication.shared.open(link)
+        }
+    }
+    
     @IBAction func signIn(_ sender: Any) {
         if self.typeSelector.selectedSegmentIndex == 0 {
             UserSession.sharedInstance.setHandle(handle: "ANGEL")
