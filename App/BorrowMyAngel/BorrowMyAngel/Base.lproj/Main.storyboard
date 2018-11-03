@@ -405,7 +405,7 @@
                                 <state key="normal" image="chat_as_guest"/>
                                 <connections>
                                     <action selector="loginAnonymously:" destination="0YY-gY-ghW" eventType="touchUpInside" id="teW-34-jOm"/>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="exo-8Q-PZq"/>
+                                    <segue destination="49e-Tb-3d3" kind="showDetail" id="o2z-m1-Rdp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYW-uM-Pvp">
@@ -630,7 +630,7 @@
         <image name="twitter_icon" width="48" height="49"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="exo-8Q-PZq"/>
+        <segue reference="o2z-m1-Rdp"/>
         <segue reference="YLF-Pg-rw4"/>
         <segue reference="ZUO-9k-N30"/>
     </inferredMetricsTieBreakers>
