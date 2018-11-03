@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SendBirdSDK
 
 class MessagingViewController: UIViewController, UITextFieldDelegate {
     
@@ -32,8 +33,55 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
                 self.showMessageView()
             }
         })
+        self.processDummyMessagesOnTestChannel()
     }
-    
+
+    func processDummyMessagesOnTestChannel(){
+        SBDMain.initWithApplicationId("secret here")
+        SBDMain.connect(withUserId: "PERSON_IN_NEED") { (user, error) in
+            guard error == nil else {    // Error.
+                print(error?.description)
+                return
+            }
+        }
+        //        SBDOpenChannel.createChannel { (channel, error) in
+        SBDOpenChannel.getWithUrl("test") { (channel, error) in
+            guard error == nil else {    // Error.
+                return
+            }
+
+            channel?.enter(completionHandler: { (error) in
+                guard error == nil else {    // Error.
+                    print(error?.description)
+                    return
+                }
+
+                let previousMessageQuery = channel?.createPreviousMessageListQuery()
+                previousMessageQuery?.loadPreviousMessages(withLimit: 30, reverse: true, completionHandler: { (messages, error) in
+                    guard error == nil else {    // Error.
+                        return
+                    }
+
+                    for message in messages! {
+                        switch message {
+                        case let userMessage as SBDUserMessage:
+                            print(userMessage.message)
+                            self.messageView.text.append(contentsOf: "\n\(userMessage.message!)")
+                        default:
+                            print("Error")
+                        }
+                    }
+                })
+
+                channel?.sendUserMessage("test message", data: "", customType: "", completionHandler: { (message, error) in
+                    guard error == nil else {    // Error.
+                        return
+                    }
+                })
+            })
+        }
+    }
+
     @IBAction func sendMessage(_ sender: Any) {
         let messageText = self.messageInput.text!
         self.messageView.text.append("\nme: \(messageText)")
