@@ -431,6 +431,15 @@
                                     <segue destination="3PV-7c-ZW2" kind="show" id="YLF-Pg-rw4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slt-gu-s8c">
+                                <rect key="frame" x="132.5" y="550" width="110" height="30"/>
+                                <state key="normal" title="Tell your friends">
+                                    <color key="titleColor" red="0.59215686270000001" green="0.42745098040000001" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="share:" destination="0YY-gY-ghW" eventType="touchUpInside" id="DpP-aA-70T"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGW-PZ-HH9">
                                 <rect key="frame" x="72" y="263.5" width="231" height="60"/>
                                 <constraints>
@@ -469,10 +478,12 @@
                             <constraint firstItem="VCa-NR-GLI" firstAttribute="leading" secondItem="prg-c4-nfO" secondAttribute="leading" id="BaK-MP-uXW"/>
                             <constraint firstItem="prg-c4-nfO" firstAttribute="top" secondItem="VCa-NR-GLI" secondAttribute="top" id="BoY-9m-nyU"/>
                             <constraint firstItem="prg-c4-nfO" firstAttribute="height" secondItem="Bua-Az-ON5" secondAttribute="height" id="D3O-wx-A5c"/>
+                            <constraint firstItem="slt-gu-s8c" firstAttribute="centerX" secondItem="VCa-NR-GLI" secondAttribute="centerX" id="EKz-iS-6Dv"/>
                             <constraint firstItem="VCa-NR-GLI" firstAttribute="bottom" secondItem="Hfl-Sk-K4J" secondAttribute="bottom" constant="67" id="FcZ-Eb-NlL"/>
                             <constraint firstItem="kbh-bu-Wcm" firstAttribute="centerX" secondItem="VCa-NR-GLI" secondAttribute="centerX" id="OTn-NU-Fae"/>
                             <constraint firstItem="Giu-j7-ys1" firstAttribute="top" secondItem="VGW-PZ-HH9" secondAttribute="bottom" constant="30" id="VRs-Ef-kNn"/>
                             <constraint firstItem="VGW-PZ-HH9" firstAttribute="centerX" secondItem="VCa-NR-GLI" secondAttribute="centerX" id="VnX-tu-aBo"/>
+                            <constraint firstItem="slt-gu-s8c" firstAttribute="top" secondItem="Hfl-Sk-K4J" secondAttribute="bottom" constant="-50" id="WMI-nW-EpF"/>
                             <constraint firstItem="Giu-j7-ys1" firstAttribute="leading" secondItem="VGW-PZ-HH9" secondAttribute="leading" id="baz-ZE-j8A"/>
                             <constraint firstItem="MtY-iF-3nt" firstAttribute="top" secondItem="VCa-NR-GLI" secondAttribute="top" constant="59" id="cAY-Sw-ZKt"/>
                             <constraint firstItem="VCa-NR-GLI" firstAttribute="trailing" secondItem="Hfl-Sk-K4J" secondAttribute="trailing" constant="33" id="idT-gC-Vge"/>
@@ -739,7 +750,7 @@
         <image name="twitter_icon" width="48" height="49"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o2z-m1-Rdp"/>
+        <segue reference="RPc-tX-Jjx"/>
         <segue reference="YLF-Pg-rw4"/>
         <segue reference="2hF-9V-miN"/>
     </inferredMetricsTieBreakers>
