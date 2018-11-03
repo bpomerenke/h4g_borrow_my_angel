@@ -6,4 +6,18 @@
 //  Copyright © 2018 hack4good. All rights reserved.
 //
 
-import Foundation
+class UserSession {
+    static var sharedInstance = UserSession()
+    private init(){
+        userSessionHandle = ""
+    }
+    var userSessionHandle: String
+
+    func setHandle(handle: String) {
+        userSessionHandle = handle
+    }
+
+    func getHandle() -> String {
+        return userSessionHandle
+    }
+}
