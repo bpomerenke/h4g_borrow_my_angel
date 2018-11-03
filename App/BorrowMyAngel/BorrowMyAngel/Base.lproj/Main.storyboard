@@ -239,8 +239,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK8-FB-oEK">
-                                <rect key="frame" x="166.5" y="101" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK8-FB-oEK">
+                                <rect key="frame" x="30.5" y="101" width="314" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="314" id="pQv-wV-IDn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="URL" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wX8-iS-e3h">
+                                <rect key="frame" x="67.5" y="197.5" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="f46-QM-2o2"/>
+                                    <constraint firstAttribute="width" constant="240" id="frT-JQ-ACN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="url"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75E-1f-DzJ">
+                                <rect key="frame" x="109.5" y="147.5" width="156" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="Og7-9G-tIc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -248,18 +271,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="75E-1f-DzJ" firstAttribute="top" secondItem="tK8-FB-oEK" secondAttribute="bottom" constant="20" id="3dZ-bL-4nL"/>
+                            <constraint firstItem="75E-1f-DzJ" firstAttribute="centerX" secondItem="tK8-FB-oEK" secondAttribute="centerX" id="6YT-bg-y9Y"/>
                             <constraint firstItem="tK8-FB-oEK" firstAttribute="top" secondItem="Opd-Ip-YdM" secondAttribute="top" constant="37" id="6yy-c3-0bJ"/>
                             <constraint firstItem="tK8-FB-oEK" firstAttribute="centerX" secondItem="8C3-zV-yIR" secondAttribute="centerX" id="ABI-8u-yYF"/>
+                            <constraint firstItem="wX8-iS-e3h" firstAttribute="top" secondItem="75E-1f-DzJ" secondAttribute="bottom" constant="29" id="U3M-zm-Js6"/>
+                            <constraint firstItem="wX8-iS-e3h" firstAttribute="centerX" secondItem="75E-1f-DzJ" secondAttribute="centerX" id="yX4-oL-QQ5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Opd-Ip-YdM"/>
                     </view>
                     <connections>
-                        <outlet property="resourceTitle" destination="tK8-FB-oEK" id="Gfc-ai-Uf1"/>
+                        <outlet property="phoneNumber" destination="75E-1f-DzJ" id="DLd-d3-m6A"/>
+                        <outlet property="resourceTitle" destination="tK8-FB-oEK" id="lzi-7M-hNq"/>
+                        <outlet property="urlTextView" destination="wX8-iS-e3h" id="wEr-w8-eoF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxi-ll-Xfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2505" y="-38"/>
+            <point key="canvasLocation" x="2504.8000000000002" y="-38.23088455772114"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="olo-gj-Hv3">

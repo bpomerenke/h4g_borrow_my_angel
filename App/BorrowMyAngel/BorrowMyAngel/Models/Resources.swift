@@ -8,5 +8,5 @@ struct ResourceItem {
     let title: String
     let phone: String
     let zip: Int
-    let url: URL
+    let url: String
 }
