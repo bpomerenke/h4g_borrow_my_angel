@@ -12,7 +12,7 @@ class MessagingViewController: UIViewController {
     
     private var channel: SBDOpenChannel?
     private var sbdApplicationId = ProcessInfo.processInfo.environment["SENDBIRD_APP_ID"] ?? ""
-    private var channelUrl = "test"
+    private var channelUrl = ""
     private var timer = Timer()
     private var progressVal = 00.0
     
@@ -36,6 +36,7 @@ class MessagingViewController: UIViewController {
             
             if self.progressVal >= 100 {
                 Timer   .invalidate()
+                self.channelUrl = UserSession.sharedInstance.getRoomUrl()
                 self.connectionStatus.text = "Connected"
                 self.showMessageView()
             }

@@ -24,7 +24,12 @@ class UserSession {
     }
 
     func setSBDUser(user: SBDUser?) {
+        //IF isAdmin create room else find admin and get room
         sBDUser = user
+    }
+
+    func getRoomUrl() -> String{
+        return "test"
     }
 
     func getHandle() -> String {
