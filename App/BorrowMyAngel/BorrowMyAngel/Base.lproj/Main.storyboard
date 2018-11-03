@@ -19,8 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEj-Tx-sHJ">
-                                <rect key="frame" x="88" y="279" width="199" height="80"/>
+                                <rect key="frame" x="88" y="510" width="199" height="80"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="199" id="jbM-1M-Ofb"/>
                                     <constraint firstAttribute="height" constant="80" id="yUn-8B-oaX"/>
                                 </constraints>
                                 <state key="normal" title="Connect" backgroundImage="first">
@@ -31,28 +32,79 @@
                                     <segue destination="vGQ-FI-PV6" kind="show" id="ZUO-9k-N30"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request Connection with Angel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="86" y="384" width="203" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="yjs-B7-LOG">
+                                <rect key="frame" x="25" y="181" width="325" height="29"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Severity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoD-Pk-OsO">
+                                <rect key="frame" x="156.5" y="150" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJx-JM-NnW">
+                                <rect key="frame" x="167.5" y="249" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zCb-0l-rci">
+                                <rect key="frame" x="56.5" y="442" width="262" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="Tc6-kw-2Ii"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Chat"/>
+                                    <segment title="Voice"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5E-hu-IJb">
+                                <rect key="frame" x="125" y="411" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdQ-cs-w7j">
+                                <rect key="frame" x="0.0" y="280" width="375" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="9fI-dR-Psl"/>
+                                    <constraint firstAttribute="width" constant="375" id="VfZ-xQ-065"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DEj-Tx-sHJ" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="0Dt-38-eaI"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="leading" secondItem="DEj-Tx-sHJ" secondAttribute="trailing" constant="-201" id="Gfd-UX-A5Y"/>
+                            <constraint firstItem="SoD-Pk-OsO" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="0C4-cp-b62"/>
+                            <constraint firstItem="yjs-B7-LOG" firstAttribute="top" secondItem="SoD-Pk-OsO" secondAttribute="bottom" constant="10" id="0Ie-TE-z2d"/>
+                            <constraint firstItem="DEj-Tx-sHJ" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="7P8-Wd-63r"/>
+                            <constraint firstItem="zCb-0l-rci" firstAttribute="top" secondItem="N5E-hu-IJb" secondAttribute="bottom" constant="10" id="Ck2-v4-zbs"/>
+                            <constraint firstItem="YJx-JM-NnW" firstAttribute="top" secondItem="yjs-B7-LOG" secondAttribute="bottom" constant="40" id="DYl-Bd-swC"/>
                             <constraint firstItem="DEj-Tx-sHJ" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="Hke-Bk-SVN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="DEj-Tx-sHJ" secondAttribute="bottom" constant="25" id="o2K-WQ-WvD"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="rLn-bv-IaE"/>
+                            <constraint firstItem="yjs-B7-LOG" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="Ksv-3T-szT"/>
+                            <constraint firstItem="N5E-hu-IJb" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="Qoz-0V-0d3"/>
+                            <constraint firstItem="YJx-JM-NnW" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="Qyb-7O-e8Y"/>
+                            <constraint firstItem="mdQ-cs-w7j" firstAttribute="top" secondItem="YJx-JM-NnW" secondAttribute="bottom" constant="10" id="XYl-QM-aYn"/>
+                            <constraint firstItem="mdQ-cs-w7j" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="hQP-Rd-s4q"/>
+                            <constraint firstItem="N5E-hu-IJb" firstAttribute="top" secondItem="mdQ-cs-w7j" secondAttribute="bottom" constant="40" id="jIx-g9-iSE"/>
+                            <constraint firstItem="yjs-B7-LOG" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="25" id="k7O-DY-zvf"/>
+                            <constraint firstItem="zCb-0l-rci" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="kLt-Kv-v3q"/>
+                            <constraint firstItem="DEj-Tx-sHJ" firstAttribute="top" secondItem="zCb-0l-rci" secondAttribute="bottom" constant="40" id="mJz-mU-Lyf"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="yjs-B7-LOG" secondAttribute="trailing" constant="25" id="w2d-Xt-HgD"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="DEj-Tx-sHJ" secondAttribute="bottom" constant="28" id="x4Q-s6-smc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Connect" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="connectButton" destination="DEj-Tx-sHJ" id="9Vz-Rm-hY9"/>
-                        <outlet property="connectDescription" destination="A5M-7J-77L" id="6tx-ng-AiW"/>
                         <outlet property="connectionStatus" destination="bbn-nN-NXw" id="WFH-CC-6xT"/>
+                        <outlet property="issuePicker" destination="mdQ-cs-w7j" id="9zW-d8-LNz"/>
                         <outlet property="messageInput" destination="039-vg-Thr" id="llo-2X-nll"/>
                         <outlet property="messageSend" destination="gxU-mW-Hmc" id="y5K-cg-4lV"/>
                         <outlet property="messageView" destination="u2K-nl-tGW" id="Jjy-af-VDh"/>
