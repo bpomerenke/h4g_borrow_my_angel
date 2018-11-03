@@ -285,6 +285,9 @@
                                             <constraint firstAttribute="height" constant="80" id="dQj-ed-zCE"/>
                                         </constraints>
                                         <state key="normal" image="Cause_Mo_logo"/>
+                                        <connections>
+                                            <action selector="gotoCauseMomentum:" destination="3PV-7c-ZW2" eventType="touchUpInside" id="ZCR-xO-UTx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -369,16 +372,17 @@
                             <constraint firstItem="TQF-Xe-Zca" firstAttribute="centerY" secondItem="Mjf-wT-BQ8" secondAttribute="centerY" id="9b9-LN-069"/>
                             <constraint firstItem="tb1-Y1-z40" firstAttribute="top" secondItem="Z8e-Yr-rKb" secondAttribute="top" constant="67" id="CLP-mi-ltD"/>
                             <constraint firstItem="VYm-L3-12b" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="EEp-II-FVz"/>
-                            <constraint firstItem="cro-dn-yQW" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="ERE-Wn-PGO"/>
                             <constraint firstItem="VYm-L3-12b" firstAttribute="top" secondItem="Gor-fX-img" secondAttribute="bottom" constant="7" id="Hc0-AT-rpS"/>
                             <constraint firstItem="Mjf-wT-BQ8" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="Ib7-Rd-80Y"/>
                             <constraint firstItem="bzH-IB-y2v" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="Lfb-NP-8se"/>
                             <constraint firstItem="tb1-Y1-z40" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="M0a-jz-QSJ"/>
                             <constraint firstItem="edG-Pg-0Ky" firstAttribute="leading" secondItem="Z8e-Yr-rKb" secondAttribute="leading" constant="15" id="NJF-do-uDC"/>
                             <constraint firstItem="UtC-cf-zn5" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="U46-GU-dih"/>
+                            <constraint firstItem="Gor-fX-img" firstAttribute="leading" secondItem="Z8e-Yr-rKb" secondAttribute="leading" constant="105" id="YKJ-Zk-Fsq"/>
                             <constraint firstItem="Z8e-Yr-rKb" firstAttribute="bottom" secondItem="edG-Pg-0Ky" secondAttribute="bottom" constant="100" id="cOu-8y-MQS"/>
                             <constraint firstItem="UtC-cf-zn5" firstAttribute="top" secondItem="lft-0B-oZA" secondAttribute="bottom" constant="20" id="dwc-TH-kSM"/>
                             <constraint firstItem="MSs-Pi-uyO" firstAttribute="leading" secondItem="Mjf-wT-BQ8" secondAttribute="trailing" constant="15" id="euq-jW-Un7"/>
+                            <constraint firstItem="Z8e-Yr-rKb" firstAttribute="trailing" secondItem="Gor-fX-img" secondAttribute="trailing" constant="105" id="jBx-g2-2T2"/>
                             <constraint firstItem="Mjf-wT-BQ8" firstAttribute="leading" secondItem="TQF-Xe-Zca" secondAttribute="trailing" constant="15" id="kNr-Fc-qmw"/>
                             <constraint firstItem="bzH-IB-y2v" firstAttribute="top" secondItem="UtC-cf-zn5" secondAttribute="bottom" constant="10" id="oNa-lt-v6w"/>
                             <constraint firstItem="MSs-Pi-uyO" firstAttribute="centerY" secondItem="Mjf-wT-BQ8" secondAttribute="centerY" id="qJM-oV-Nyi"/>
@@ -749,6 +753,7 @@
         <image name="twitter_icon" width="48" height="49"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="rMG-Oz-e84"/>
         <segue reference="RPc-tX-Jjx"/>
         <segue reference="k4v-ju-U38"/>
         <segue reference="2hF-9V-miN"/>
