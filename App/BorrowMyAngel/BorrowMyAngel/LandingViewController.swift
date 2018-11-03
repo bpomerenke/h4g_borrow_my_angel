@@ -18,7 +18,7 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func loginAnonymously(_ sender: Any) {
-        UserSession.sharedInstance.setHandle(handle: "PERSON_IN_NEED")
+        UserSession.sharedInstance.setHandle()
     }
     
     @IBAction func share(_ sender: Any) {
