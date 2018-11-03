@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4538C3FB218D42960058F5D8 /* AngelStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */; };
 		45CCAB77218E20C10048A34C /* AngelApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCAB76218E20C10048A34C /* AngelApplicationViewController.swift */; };
+		45CCAB7F218E571B0048A34C /* AngelApplicationViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCAB7E218E571B0048A34C /* AngelApplicationViewController2.swift */; };
+		45CCAB81218E59180048A34C /* AngelApplicationViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCAB80218E59180048A34C /* AngelApplicationViewController2.swift */; };
+		45CCAB83218E5AA00048A34C /* AngelApplicationController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCAB82218E5AA00048A34C /* AngelApplicationController3.swift */; };
+		45CCAB85218E5C0F0048A34C /* AngelApplicationViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCAB84218E5C0F0048A34C /* AngelApplicationViewController4.swift */; };
 		5A40C62C218D7804001E8412 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62B218D7804001E8412 /* MessagingViewController.swift */; };
 		5A40C62E218D7E64001E8412 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62D218D7E64001E8412 /* LoginViewController.swift */; };
 		5A460ABF218D8D1900FA77F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A460ABD218D8D1900FA77F7 /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelStatusViewController.swift; sourceTree = "<group>"; };
 		45CCAB76218E20C10048A34C /* AngelApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngelApplicationViewController.swift; sourceTree = "<group>"; tabWidth = 8; usesTabs = 0; };
+		45CCAB7E218E571B0048A34C /* AngelApplicationViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AngelApplicationViewController2.swift; path = BorrowMyAngel/AngelApplicationViewController2.swift; sourceTree = "<group>"; };
+		45CCAB80218E59180048A34C /* AngelApplicationViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelApplicationViewController2.swift; sourceTree = "<group>"; };
+		45CCAB82218E5AA00048A34C /* AngelApplicationController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelApplicationController3.swift; sourceTree = "<group>"; };
+		45CCAB84218E5C0F0048A34C /* AngelApplicationViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelApplicationViewController4.swift; sourceTree = "<group>"; };
 		4CA1D90DABB7E8E4572F5D09 /* Pods-BorrowMyAngelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngelTests/Pods-BorrowMyAngelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A40C62B218D7804001E8412 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		5A40C62D218D7E64001E8412 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 		5B10F671218D062200344011 = {
 			isa = PBXGroup;
 			children = (
+				45CCAB7E218E571B0048A34C /* AngelApplicationViewController2.swift */,
 				5A7FE0AD218D934B005F99A2 /* Podfile */,
 				5B10F67C218D062200344011 /* BorrowMyAngel */,
 				5B10F693218D062500344011 /* BorrowMyAngelTests */,
@@ -128,6 +137,9 @@
 				5B21400F218E394100AA5CA8 /* Extensions */,
 				5B10F688218D062500344011 /* LaunchScreen.storyboard */,
 				5A460ABD218D8D1900FA77F7 /* Main.storyboard */,
+				45CCAB84218E5C0F0048A34C /* AngelApplicationViewController4.swift */,
+				45CCAB82218E5AA00048A34C /* AngelApplicationController3.swift */,
+				45CCAB80218E59180048A34C /* AngelApplicationViewController2.swift */,
 				5B214007218E239F00AA5CA8 /* Models */,
 				5A935CE1218E51AF00077597 /* MessageTableViewCell.swift */,
 			);
@@ -354,12 +366,16 @@
 				4538C3FB218D42960058F5D8 /* AngelStatusViewController.swift in Sources */,
 				5A935CE0218E1E5500077597 /* LandingViewController.swift in Sources */,
 				5B10F682218D062300344011 /* ResourcesViewController.swift in Sources */,
+				45CCAB81218E59180048A34C /* AngelApplicationViewController2.swift in Sources */,
 				5A7FE0B0218DFC3F005F99A2 /* UserSession.swift in Sources */,
 				45CCAB77218E20C10048A34C /* AngelApplicationViewController.swift in Sources */,
+				45CCAB85218E5C0F0048A34C /* AngelApplicationViewController4.swift in Sources */,
 				5B10F67E218D062200344011 /* AppDelegate.swift in Sources */,
 				5A935CE2218E51AF00077597 /* MessageTableViewCell.swift in Sources */,
 				5A935CE4218E829F00077597 /* PaddingLabel.swift in Sources */,
 				5B214011218E395D00AA5CA8 /* UIColor+BorrowMyAngel.swift in Sources */,
+				45CCAB7F218E571B0048A34C /* AngelApplicationViewController2.swift in Sources */,
+				45CCAB83218E5AA00048A34C /* AngelApplicationController3.swift in Sources */,
 				5B21400E218E2F7400AA5CA8 /* ResourceDetailViewController.swift in Sources */,
 				5B21400C218E240C00AA5CA8 /* LocalResources.swift in Sources */,
 				5B214009218E23AD00AA5CA8 /* Resources.swift in Sources */,
