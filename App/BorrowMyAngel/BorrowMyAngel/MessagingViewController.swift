@@ -28,6 +28,10 @@ class MessagingViewController: UIViewController {
             }
         })
         processDummyMessagesOnTestChannel()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: MessagingViewController.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: MessagingViewController.keyboardWillHideNotification, object: nil)
+        messageView.layoutManager.allowsNonContiguousLayout = false
+        messageView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
 
     func processDummyMessagesOnTestChannel(){
@@ -69,11 +73,21 @@ class MessagingViewController: UIViewController {
         }
     }
 
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        var bottom = messageView.contentSize.height - messageView.frame.size.height
+        if bottom < 0 {
+            bottom = 0
+        }
+        if messageView.contentOffset.y != bottom {
+            messageView.setContentOffset(CGPoint(x: 0, y: bottom), animated: true)
+        }
+    }
+
     func addMessageToView(with: SBDBaseMessage) {
         switch with {
         case let userMessage as SBDUserMessage:
             print(userMessage.message)
-            self.messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
+            messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
         default:
             print("Error")
         }
@@ -95,6 +109,20 @@ class MessagingViewController: UIViewController {
         self.messageView.isHidden = false
         self.messageInput.isHidden = false
         self.progressBar.isHidden = true
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else {return}
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardFrame = keyboardSize.cgRectValue
+        if self.view.frame.origin.y == 0{
+            self.view.frame.origin.y -= (keyboardFrame.height + 10)
+        }
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0{
+            self.view.frame.origin.y = 0
+        }
     }
 }
 
