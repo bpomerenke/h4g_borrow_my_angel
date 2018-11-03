@@ -8,16 +8,15 @@ class MessagingViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var connectionStatus: UILabel!
     
-    var channel: SBDOpenChannel?
-    var sbdApplicationId = ProcessInfo.processInfo.environment["SENDBIRD_APP_ID"] ?? ""
-    var personInNeedHandle = "PERSON_IN_NEED"
-    var channelUrl = "test"
+    private var channel: SBDOpenChannel?
+    private var sbdApplicationId = ProcessInfo.processInfo.environment["SENDBIRD_APP_ID"] ?? ""
+    private var personInNeedHandle = "PERSON_IN_NEED"
+    private var channelUrl = "test"
+    private var timer = Timer()
+    private var progressVal = 00.0
     
-    var timer = Timer()
-    var progressVal = 00.0
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.messageInput.delegate = self
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (Timer) in
             self.progressVal += 1
@@ -29,12 +28,13 @@ class MessagingViewController: UIViewController {
                 self.showMessageView()
             }
         })
-        self.processDummyMessagesOnTestChannel()
+        
+        processDummyMessagesOnTestChannel()
     }
 
     func processDummyMessagesOnTestChannel(){
-        SBDMain.initWithApplicationId(self.sbdApplicationId)
-        SBDMain.connect(withUserId: self.personInNeedHandle) { (user, error) in
+        SBDMain.initWithApplicationId(sbdApplicationId)
+        SBDMain.connect(withUserId: personInNeedHandle) { (user, error) in
             guard error == nil else {    // Error.
                 print(error?.description)
                 return
@@ -59,7 +59,7 @@ class MessagingViewController: UIViewController {
                             return
                         }
 
-                        for message in messages! {
+                        messages?.forEach { message in
                             switch message {
                             case let userMessage as SBDUserMessage:
                                 print(userMessage.message)

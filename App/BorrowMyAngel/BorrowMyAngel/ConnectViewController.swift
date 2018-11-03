@@ -1,7 +1,6 @@
 import UIKit
 
 class ConnectViewController: UIViewController {
-   
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var connectDescription: UILabel!
     @IBOutlet weak var issuePicker: UIPickerView!

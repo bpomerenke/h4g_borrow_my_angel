@@ -1,7 +1,6 @@
 import UIKit
 
 class ResourcesViewController: UIViewController {
-    
     struct resourceType {
         var name: String
         var resources: [resouceItem]
