@@ -17,6 +17,9 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var connectionStatus: UILabel!
     
     var channel: SBDOpenChannel?
+    var sbdApplicationId = "secret here"
+    var personInNeedHandle = "PERSON_IN_NEED"
+    var channelUrl = "test"
     
     var timer = Timer()
     var progressVal = 00.0
@@ -38,14 +41,14 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
     }
 
     func processDummyMessagesOnTestChannel(){
-        SBDMain.initWithApplicationId("secret here")
-        SBDMain.connect(withUserId: "PERSON_IN_NEED") { (user, error) in
+        SBDMain.initWithApplicationId(self.sbdApplicationId)
+        SBDMain.connect(withUserId: self.personInNeedHandle) { (user, error) in
             guard error == nil else {    // Error.
                 print(error?.description)
                 return
             }
             //        SBDOpenChannel.createChannel { (channel, error) in
-            SBDOpenChannel.getWithUrl("test") { (channel, error) in
+            SBDOpenChannel.getWithUrl(self.channelUrl) { (channel, error) in
                 guard error == nil else {    // Error.
                     print(error?.description)
                     return
@@ -58,7 +61,7 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
                     }
 
                     let previousMessageQuery = channel?.createPreviousMessageListQuery()
-                    previousMessageQuery?.loadPreviousMessages(withLimit: 30, reverse: true, completionHandler: { (messages, error) in
+                    previousMessageQuery?.loadPreviousMessages(withLimit: 200, reverse: false, completionHandler: { (messages, error) in
                         guard error == nil else {    // Error.
                             print(error?.description)
                             return
