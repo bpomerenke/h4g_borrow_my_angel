@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ConnectViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
    
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var connectDescription: UILabel!
