@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4538C3FB218D42960058F5D8 /* AngelStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */; };
+		5A40C62C218D7804001E8412 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62B218D7804001E8412 /* MessagingViewController.swift */; };
 		5B10F67E218D062200344011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F67D218D062200344011 /* AppDelegate.swift */; };
 		5B10F680218D062300344011 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F67F218D062300344011 /* FirstViewController.swift */; };
 		5B10F682218D062300344011 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F681218D062300344011 /* SecondViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelStatusViewController.swift; sourceTree = "<group>"; };
+		5A40C62B218D7804001E8412 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		5B10F67A218D062200344011 /* BorrowMyAngel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorrowMyAngel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10F67D218D062200344011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10F67F218D062300344011 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		5B10F67C218D062200344011 /* BorrowMyAngel */ = {
 			isa = PBXGroup;
 			children = (
+				5A40C62B218D7804001E8412 /* MessagingViewController.swift */,
 				5B10F67D218D062200344011 /* AppDelegate.swift */,
 				5B10F67F218D062300344011 /* FirstViewController.swift */,
 				5B10F681218D062300344011 /* SecondViewController.swift */,
@@ -206,6 +209,7 @@
 				4538C3FB218D42960058F5D8 /* AngelStatusViewController.swift in Sources */,
 				5B10F682218D062300344011 /* SecondViewController.swift in Sources */,
 				5B10F67E218D062200344011 /* AppDelegate.swift in Sources */,
+				5A40C62C218D7804001E8412 /* MessagingViewController.swift in Sources */,
 				5B10F680218D062300344011 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
