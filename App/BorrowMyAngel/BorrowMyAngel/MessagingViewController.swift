@@ -16,6 +16,7 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var connectionStatus: UILabel!
     
+    var channel: SBDOpenChannel?
     
     var timer = Timer()
     var progressVal = 00.0
@@ -66,18 +67,14 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
                         switch message {
                         case let userMessage as SBDUserMessage:
                             print(userMessage.message)
-                            self.messageView.text.append(contentsOf: "\n\(userMessage.message!)")
+                            self.messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
                         default:
                             print("Error")
                         }
                     }
                 })
 
-                channel?.sendUserMessage("test message", data: "", customType: "", completionHandler: { (message, error) in
-                    guard error == nil else {    // Error.
-                        return
-                    }
-                })
+                self.channel = channel
             })
         }
     }
@@ -86,10 +83,10 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
         let messageText = self.messageInput.text!
         self.messageView.text.append("\nme: \(messageText)")
         self.messageInput.text = ""
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (Timer) in
-            
-            self.messageView.text.append("\nangel: I hear you...how can I help?")
+        self.channel?.sendUserMessage(messageText, data: "", customType: "", completionHandler: { (message, error) in
+            guard error == nil else {    // Error.
+                return
+            }            
         })
     }
     
