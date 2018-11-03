@@ -24,8 +24,11 @@ class LoginViewController: UIViewController {
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue
             ], for: .selected)
 
-        self.userHandle.delegate = self
-        self.userPassword.delegate = self
+        userHandle.delegate = self
+        userPassword.delegate = self
+
+        userHandle.tag = 0
+        userPassword.tag = 1
     }
     
     @IBAction func gotoCauseMomentum(_ sender: Any) {
@@ -49,6 +52,16 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         userHandle.resignFirstResponder()
         userPassword.resignFirstResponder()
-        return true
+
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+            return true
+        }
+        // Do not add a line break
+        return false
     }
 }
