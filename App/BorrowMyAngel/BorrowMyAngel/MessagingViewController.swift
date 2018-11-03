@@ -27,12 +27,12 @@ class MessagingViewController: UIViewController {
                 self.showMessageView()
             }
         })
-        
         processDummyMessagesOnTestChannel()
     }
 
     func processDummyMessagesOnTestChannel(){
         SBDMain.initWithApplicationId(sbdApplicationId)
+        SBDMain.add(self, identifier: "messagingVC")
         SBDMain.connect(withUserId: UserSession.sharedInstance.getHandle()) { (user, error) in
             guard error == nil else {    // Error.
                 print(error?.description)
@@ -59,19 +59,23 @@ class MessagingViewController: UIViewController {
                         }
 
                         messages?.forEach { message in
-                            switch message {
-                            case let userMessage as SBDUserMessage:
-                                print(userMessage.message)
-                                self.messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
-                            default:
-                                print("Error")
-                            }
+                            self.addMessageToView(with:message)
                         }
                     })
 
                     self.channel = channel
                 })
             }
+        }
+    }
+
+    func addMessageToView(with: SBDBaseMessage) {
+        switch with {
+        case let userMessage as SBDUserMessage:
+            print(userMessage.message)
+            self.messageView.text.append(contentsOf: "\n\(userMessage.sender!.userId): \(userMessage.message!)")
+        default:
+            print("Error")
         }
     }
 
@@ -98,6 +102,12 @@ extension MessagingViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         messageInput.resignFirstResponder()
         return true
+    }
+}
+
+extension MessagingViewController: SBDChannelDelegate {
+    func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage) {
+        addMessageToView(with: message)
     }
 }
 
