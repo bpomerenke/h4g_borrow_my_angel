@@ -51,7 +51,9 @@ class MessagingViewController: UIViewController {
                 print("error connecting: \(String(describing: error?.description))")
                 return
             }
-            //        SBDOpenChannel.createChannel { (channel, error) in
+
+            UserSession.sharedInstance.setSBDUser(user: SBDMain.getCurrentUser())
+
             SBDOpenChannel.getWithUrl(self.channelUrl) { (channel, error) in
                 guard error == nil else {
                     print("error getting channel with url: \(String(describing: error?.description))")

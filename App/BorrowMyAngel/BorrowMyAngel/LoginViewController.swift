@@ -23,9 +23,7 @@ class LoginViewController: UIViewController {
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue
             ], for: .selected)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: MessagingViewController.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: MessagingViewController.keyboardWillHideNotification, object: nil)
-
+        self.userHandle.delegate = self
     }
     
     @IBAction func gotoCauseMomentum(_ sender: Any) {
@@ -43,18 +41,11 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: "personInNeedSegue", sender: self)
         }
     }
+}
 
-    @objc func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else {return}
-        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
-        let keyboardFrame = keyboardSize.cgRectValue
-        if self.view.frame.origin.y == 0{
-            self.view.frame.origin.y -= (keyboardFrame.height + 10)
-        }
-    }
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0{
-            self.view.frame.origin.y = 0
-        }
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        userHandle.resignFirstResponder()
+        return true
     }
 }
