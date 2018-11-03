@@ -1,10 +1,9 @@
 import UIKit
 
 class ResourcesViewController: UIViewController {
-    var filteredResults = [ResourceType]()
-    var resourceResults = LocalResources.allLocalResources
-    var selectedItem: ResourceItem?
-    let searchController = UISearchController(searchResultsController: nil)
+    private var filteredResults = [ResourceType]()
+    private var resourceResults = LocalResources.allLocalResources
+    private let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet var resourcesTableView: UITableView!
     
@@ -29,12 +28,18 @@ class ResourcesViewController: UIViewController {
         definesPresentationContext = true
     }
     
-    func searchBarIsEmpty() -> Bool {
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = resourcesTableView.indexPathForSelectedRow {
+            resourcesTableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
+    private func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    func filterContentForSearchText(_ searchText: String) {
+    private func filterContentForSearchText(_ searchText: String) {
         filteredResults = resourceResults.compactMap { (resourceType: ResourceType) -> ResourceType? in
             let filteredResourceItems = resourceType.resources.filter {( resourceItem : ResourceItem) -> Bool in
                 return String(resourceItem.zip).contains(searchText)
@@ -66,7 +71,7 @@ class ResourcesViewController: UIViewController {
             }
             
             guard let selectedItemCell = sender as? UITableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(sender ?? "")")
             }
             
             guard let indexPath = resourcesTableView.indexPath(for: selectedItemCell) else {
@@ -80,14 +85,6 @@ class ResourcesViewController: UIViewController {
 }
 
 extension ResourcesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var resourceItem: ResourceItem
-        if isFiltering() {
-            resourceItem = filteredResults[indexPath.section].resources[indexPath.row]
-        } else {
-            resourceItem = resourceResults[indexPath.section].resources[indexPath.row]
-        }
-    }
 }
 
 extension ResourcesViewController: UITableViewDataSource {
@@ -117,7 +114,6 @@ extension ResourcesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "resourceCell", for: indexPath)
         let resourceItem: ResourceItem
         if isFiltering() {
@@ -128,6 +124,9 @@ extension ResourcesViewController: UITableViewDataSource {
         
         
         cell.textLabel?.text = resourceItem.title
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.lightPink
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
 }
