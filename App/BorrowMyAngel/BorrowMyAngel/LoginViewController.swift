@@ -3,6 +3,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var userHandle: UITextField!
     @IBOutlet weak var typeSelector: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,10 @@ class LoginViewController: UIViewController {
             NSAttributedString.Key.underlineColor: UIColor.init(red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0),
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue
             ], for: .selected)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: MessagingViewController.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: MessagingViewController.keyboardWillHideNotification, object: nil)
+
     }
     
     @IBAction func gotoCauseMomentum(_ sender: Any) {
@@ -31,11 +36,25 @@ class LoginViewController: UIViewController {
     
     @IBAction func signIn(_ sender: Any) {
         if self.typeSelector.selectedSegmentIndex == 0 {
-            UserSession.sharedInstance.setHandle(handle: "ANGEL")
+            UserSession.sharedInstance.setHandle(handle: self.userHandle.text)
             self.performSegue(withIdentifier: "angelSegue", sender: self)
         } else {
-            UserSession.sharedInstance.setHandle(handle: "PERSON_IN_NEED")
+            UserSession.sharedInstance.setHandle()
             self.performSegue(withIdentifier: "personInNeedSegue", sender: self)
+        }
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else {return}
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardFrame = keyboardSize.cgRectValue
+        if self.view.frame.origin.y == 0{
+            self.view.frame.origin.y -= (keyboardFrame.height + 10)
+        }
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0{
+            self.view.frame.origin.y = 0
         }
     }
 }
