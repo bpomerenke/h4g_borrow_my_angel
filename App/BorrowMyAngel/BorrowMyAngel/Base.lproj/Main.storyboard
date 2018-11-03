@@ -380,7 +380,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-IB-y2v">
                                 <rect key="frame" x="57.5" y="237" width="260" height="30"/>
@@ -389,7 +389,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gor-fX-img">
                                 <rect key="frame" x="105" y="320" width="165" height="58"/>
@@ -464,6 +464,7 @@
                         <outlet property="shadowView" destination="edG-Pg-0Ky" id="4YL-F1-duL"/>
                         <outlet property="typeSelector" destination="lft-0B-oZA" id="r5k-LR-AKr"/>
                         <outlet property="userHandle" destination="UtC-cf-zn5" id="1pc-34-OYV"/>
+                        <outlet property="userPassword" destination="bzH-IB-y2v" id="Il5-AE-muZ"/>
                         <segue destination="ghU-Kr-Qzh" kind="showDetail" identifier="angelSegue" id="rMG-Oz-e84"/>
                         <segue destination="49e-Tb-3d3" kind="showDetail" identifier="personInNeedSegue" id="RPc-tX-Jjx"/>
                     </connections>

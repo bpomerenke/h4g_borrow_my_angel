@@ -4,6 +4,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var userHandle: UITextField!
+    @IBOutlet weak var userPassword: UITextField!
     @IBOutlet weak var typeSelector: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class LoginViewController: UIViewController {
             ], for: .selected)
 
         self.userHandle.delegate = self
+        self.userPassword.delegate = self
     }
     
     @IBAction func gotoCauseMomentum(_ sender: Any) {
@@ -46,6 +48,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         userHandle.resignFirstResponder()
+        userPassword.resignFirstResponder()
         return true
     }
 }
