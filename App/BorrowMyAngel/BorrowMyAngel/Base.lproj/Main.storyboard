@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0YY-gY-ghW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0YY-gY-ghW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -412,7 +412,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_welcome_page_final" translatesAutoresizingMaskIntoConstraints="NO" id="prg-c4-nfO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="444.5" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="prg-c4-nfO" secondAttribute="height" multiplier="2:3" id="2ny-Dw-Ys6"/>
+                                </constraints>
                             </imageView>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-Sk-K4J">
                                 <rect key="frame" x="33" y="43" width="309" height="557"/>
@@ -463,20 +466,19 @@
                         <constraints>
                             <constraint firstItem="kbh-bu-Wcm" firstAttribute="top" secondItem="Giu-j7-ys1" secondAttribute="bottom" constant="30" id="32o-at-68D"/>
                             <constraint firstItem="Hfl-Sk-K4J" firstAttribute="top" secondItem="VCa-NR-GLI" secondAttribute="top" constant="23" id="9UE-cY-8o4"/>
-                            <constraint firstItem="prg-c4-nfO" firstAttribute="top" secondItem="VCa-NR-GLI" secondAttribute="top" id="BLo-F8-eNd"/>
+                            <constraint firstItem="VCa-NR-GLI" firstAttribute="leading" secondItem="prg-c4-nfO" secondAttribute="leading" id="BaK-MP-uXW"/>
+                            <constraint firstItem="prg-c4-nfO" firstAttribute="top" secondItem="VCa-NR-GLI" secondAttribute="top" id="BoY-9m-nyU"/>
+                            <constraint firstItem="prg-c4-nfO" firstAttribute="height" secondItem="Bua-Az-ON5" secondAttribute="height" id="D3O-wx-A5c"/>
                             <constraint firstItem="VCa-NR-GLI" firstAttribute="bottom" secondItem="Hfl-Sk-K4J" secondAttribute="bottom" constant="67" id="FcZ-Eb-NlL"/>
                             <constraint firstItem="kbh-bu-Wcm" firstAttribute="centerX" secondItem="VCa-NR-GLI" secondAttribute="centerX" id="OTn-NU-Fae"/>
                             <constraint firstItem="Giu-j7-ys1" firstAttribute="top" secondItem="VGW-PZ-HH9" secondAttribute="bottom" constant="30" id="VRs-Ef-kNn"/>
                             <constraint firstItem="VGW-PZ-HH9" firstAttribute="centerX" secondItem="VCa-NR-GLI" secondAttribute="centerX" id="VnX-tu-aBo"/>
                             <constraint firstItem="Giu-j7-ys1" firstAttribute="leading" secondItem="VGW-PZ-HH9" secondAttribute="leading" id="baz-ZE-j8A"/>
                             <constraint firstItem="MtY-iF-3nt" firstAttribute="top" secondItem="VCa-NR-GLI" secondAttribute="top" constant="59" id="cAY-Sw-ZKt"/>
-                            <constraint firstItem="prg-c4-nfO" firstAttribute="height" secondItem="Bua-Az-ON5" secondAttribute="height" id="cPp-cg-dzO"/>
                             <constraint firstItem="VCa-NR-GLI" firstAttribute="trailing" secondItem="Hfl-Sk-K4J" secondAttribute="trailing" constant="33" id="idT-gC-Vge"/>
-                            <constraint firstItem="prg-c4-nfO" firstAttribute="centerX" secondItem="VCa-NR-GLI" secondAttribute="centerX" id="ist-ic-Mly"/>
                             <constraint firstItem="Giu-j7-ys1" firstAttribute="width" secondItem="VGW-PZ-HH9" secondAttribute="width" id="lQ6-jf-RND"/>
                             <constraint firstItem="MtY-iF-3nt" firstAttribute="centerX" secondItem="VCa-NR-GLI" secondAttribute="centerX" id="let-v4-DaD"/>
                             <constraint firstItem="Giu-j7-ys1" firstAttribute="height" secondItem="VGW-PZ-HH9" secondAttribute="height" id="nf2-70-QyS"/>
-                            <constraint firstItem="prg-c4-nfO" firstAttribute="width" secondItem="Bua-Az-ON5" secondAttribute="width" id="pZd-8D-YzP"/>
                             <constraint firstItem="VGW-PZ-HH9" firstAttribute="centerY" secondItem="VCa-NR-GLI" secondAttribute="centerY" constant="-50" id="tCs-fj-oIG"/>
                             <constraint firstItem="Hfl-Sk-K4J" firstAttribute="leading" secondItem="VCa-NR-GLI" secondAttribute="leading" constant="33" id="uhd-gw-ClB"/>
                             <constraint firstItem="Hfl-Sk-K4J" firstAttribute="centerX" secondItem="VCa-NR-GLI" secondAttribute="centerX" id="zfw-7c-8eb"/>
