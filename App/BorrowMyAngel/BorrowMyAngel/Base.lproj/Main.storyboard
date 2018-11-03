@@ -186,26 +186,28 @@
         <!--Item 1-->
         <scene sceneID="PQO-Vf-z5h">
             <objects>
-                <viewController id="C7C-bh-EXg" sceneMemberID="viewController">
+                <viewController id="C7C-bh-EXg" customClass="AngelStatusViewController" customModule="BorrowMyAngel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1jD-TM-ROv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-4l-9ZR">
-                                <rect key="frame" x="105" y="86" width="166" height="108"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJP-HU-nVa">
+                                <rect key="frame" x="105" y="318" width="166" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Available"/>
+                                <state key="normal" title="Apply to Be an Angel"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOK-Tk-aHU">
-                                <rect key="frame" x="105" y="241" width="166" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Unavailable"/>
-                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W1T-c8-juM">
+                                <rect key="frame" x="0.0" y="127" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wnZ-bb-cRk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="pgf-lt-bkk"/>
+                    <connections>
+                        <outlet property="StatusPicker" destination="W1T-c8-juM" id="qUk-FW-qy2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZK-J5-FSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
