@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func gotoCauseMomentum(_ sender: Any) {
-        if let link = URL(string: "https://causemomentum.org/projects/the-borrow-my-angel-foundation") {
+        if let link = URL(string: "https://4agc.com/donation_pages/c9252832-caf3-4cf1-99eb-7450c0dc4699?gift_id=3fbcc69f-54aa-4581-b01b-93106c58b131") {
             UIApplication.shared.open(link)
         }
     }
