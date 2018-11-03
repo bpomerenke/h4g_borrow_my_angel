@@ -1,14 +1,6 @@
-//
-//  FirstViewController.swift
-//  BorrowMyAngel
-//
-//  Created by Jordan McAdoo on 11/2/18.
-//  Copyright © 2018 hack4good. All rights reserved.
-//
-
 import UIKit
 
-class ConnectViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ConnectViewController: UIViewController {
    
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var connectDescription: UILabel!
@@ -27,21 +19,24 @@ class ConnectViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBAction func comeBack(unwindSegue: UIStoryboardSegue){
         print("did it...came back")
     }
+    
     @IBAction func connectNow(_ sender: Any) {
 
     }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return issueData.count
-    }
-    
+}
+
+extension ConnectViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return issueData[row]
     }
-
 }
 
-
+extension ConnectViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return issueData.count
+    }
+}

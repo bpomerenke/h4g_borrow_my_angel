@@ -1,14 +1,6 @@
-//
-//  SecondViewController.swift
-//  BorrowMyAngel
-//
-//  Created by Jordan McAdoo on 11/2/18.
-//  Copyright © 2018 hack4good. All rights reserved.
-//
-
 import UIKit
 
-class ResourcesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ResourcesViewController: UIViewController {
     
     struct resourceType {
         var name: String
@@ -36,6 +28,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var noResultsLabel: UILabel!
     @IBOutlet weak var searchInput: UITextField!
     @IBOutlet weak var searchResults: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchResults.delegate = self
@@ -66,12 +59,12 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.searchResults.reloadData()
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchInput.resignFirstResponder()
-        return true
-    }
-    
+}
+
+extension ResourcesViewController: UITableViewDelegate {
+}
+
+extension ResourcesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resourceResults[section].resources.count
     }
@@ -84,6 +77,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         return resourceResults[section].name
         
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resourceCell", for: indexPath)
         
@@ -92,3 +86,9 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 }
 
+extension ResourcesViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchInput.resignFirstResponder()
+        return true
+    }
+}

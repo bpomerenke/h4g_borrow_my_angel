@@ -1,15 +1,7 @@
-//
-//  FirstViewController.swift
-//  BorrowMyAngel
-//
-//  Created by Jordan McAdoo on 11/2/18.
-//  Copyright © 2018 hack4good. All rights reserved.
-//
-
 import UIKit
 import SendBirdSDK
 
-class MessagingViewController: UIViewController, UITextFieldDelegate {
+class MessagingViewController: UIViewController {
     
     @IBOutlet weak var messageView: UITextView!
     @IBOutlet weak var messageInput: UITextField!
@@ -17,7 +9,7 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var connectionStatus: UILabel!
     
     var channel: SBDOpenChannel?
-    var sbdApplicationId = "secret here"
+    var sbdApplicationId = ProcessInfo.processInfo.environment["SENDBIRD_APP_ID"] ?? ""
     var personInNeedHandle = "PERSON_IN_NEED"
     var channelUrl = "test"
     
@@ -96,17 +88,17 @@ class MessagingViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    func showMessageView()->Void{
+    private func showMessageView()->Void{
         self.messageView.isHidden = false
         self.messageInput.isHidden = false
         self.progressBar.isHidden = true
     }
-    
-    
+}
+
+extension MessagingViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         messageInput.resignFirstResponder()
         return true
     }
 }
-
 
