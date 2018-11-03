@@ -463,6 +463,7 @@
                     <connections>
                         <outlet property="shadowView" destination="edG-Pg-0Ky" id="4YL-F1-duL"/>
                         <outlet property="typeSelector" destination="lft-0B-oZA" id="r5k-LR-AKr"/>
+                        <outlet property="userHandle" destination="UtC-cf-zn5" id="1pc-34-OYV"/>
                         <segue destination="ghU-Kr-Qzh" kind="showDetail" identifier="angelSegue" id="rMG-Oz-e84"/>
                         <segue destination="49e-Tb-3d3" kind="showDetail" identifier="personInNeedSegue" id="RPc-tX-Jjx"/>
                     </connections>
