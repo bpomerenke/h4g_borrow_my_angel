@@ -46,15 +46,16 @@ class LandingViewController: UIViewController {
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func gotoBlog(_ sender: Any) {
+        if let link = URL(string: "https://borrowmyangel650504962.wordpress.com/") {
+            UIApplication.shared.open(link)
+        }
     }
-    */
+    @IBAction func gotoDonate(_ sender: Any) {
+        if let link = URL(string: "https://4agc.com/donation_pages/c9252832-caf3-4cf1-99eb-7450c0dc4699?gift_id=3fbcc69f-54aa-4581-b01b-93106c58b131") {
+            UIApplication.shared.open(link)
+        }
+    }
 
 }
 
