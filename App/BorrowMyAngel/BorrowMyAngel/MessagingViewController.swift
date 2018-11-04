@@ -91,6 +91,8 @@ class MessagingViewController: UIViewController {
         switch with {
         case let userMessage as SBDUserMessage:
             print("error adding message: \(String(describing: userMessage.message))")
+
+            //todo: sender is angel if the sender is your angel
             let messageSender = UserSession.sharedInstance.getHandle() == userMessage.sender!.userId ? "you" : UserSession.sharedInstance.isAngel() ? "PIN" : userMessage.sender!.userId
             
             messages.append(MessageItem(sender: messageSender, text: userMessage.message!))
