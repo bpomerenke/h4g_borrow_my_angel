@@ -12,10 +12,11 @@ class UserSession {
 
     private init(){
         userSessionHandle = ""
+        channelUrl = "test"
     }
     var userSessionHandle: String
     var sBDUser: SBDUser?
-    var channelUrl: String?
+    var channelUrl: String
 
     func setHandle(handle: String? = nil) {
         guard handle == nil else {
@@ -87,7 +88,7 @@ class UserSession {
                 return
             }
 
-            self.channelUrl = channel?.channelUrl
+            self.channelUrl = channel!.channelUrl
 
             successHandler?(channel)
         }
@@ -109,7 +110,7 @@ class UserSession {
                     return
                 }
 
-                self.channelUrl = channel?.channelUrl
+                self.channelUrl = channel!.channelUrl
 
                 successHandler?()
             }
@@ -146,7 +147,10 @@ class UserSession {
     }
 
     func getRoomUrl() -> String{
-        return self.channelUrl
+        print("channel URL")
+        print(channelUrl)
+
+        return channelUrl
     }
 
     func getHandle() -> String {
