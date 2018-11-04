@@ -72,7 +72,10 @@
                                 <color key="tintColor" red="0.59215686274509804" green="0.42745098039215684" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5D-Oe-Vgn">
-                                <rect key="frame" x="27.5" y="120" width="320" height="216"/>
+                                <rect key="frame" x="84.5" y="120" width="206" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="TZz-yA-Ccn"/>
+                                </constraints>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -101,17 +104,21 @@
                     <tabBarItem key="tabBarItem" title="Connect" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="connectionStatus" destination="bbn-nN-NXw" id="WFH-CC-6xT"/>
+                        <outlet property="issueLabel" destination="YJx-JM-NnW" id="pvu-kM-u8V"/>
                         <outlet property="messageInput" destination="039-vg-Thr" id="llo-2X-nll"/>
                         <outlet property="messageSend" destination="gxU-mW-Hmc" id="y5K-cg-4lV"/>
+                        <outlet property="methodLabel" destination="N5E-hu-IJb" id="hDe-em-wVd"/>
                         <outlet property="pickerInput" destination="o5D-Oe-Vgn" id="jvR-wr-YIV"/>
                         <outlet property="progress" destination="xCn-lq-f9K" id="btd-0Q-GBp"/>
                         <outlet property="severityInput" destination="xSW-fv-p5z" id="jq5-No-VMC"/>
+                        <outlet property="severityLabel" destination="SoD-Pk-OsO" id="faV-Oe-PBJ"/>
                         <outlet property="severitySlider" destination="SUy-jK-QJc" id="4OX-GH-5Ok"/>
+                        <outlet property="typeSegment" destination="zCb-0l-rci" id="Re1-XK-Rvb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206" y="-456"/>
+            <point key="canvasLocation" x="2205.5999999999999" y="-456.52173913043481"/>
         </scene>
         <!--Messaging View Controller-->
         <scene sceneID="lii-fy-qU1">
