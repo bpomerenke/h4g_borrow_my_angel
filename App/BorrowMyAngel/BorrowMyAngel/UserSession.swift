@@ -18,8 +18,8 @@ class UserSession {
     var sBDUser: SBDUser?
     var channelUrl: String
 
-    func setHandle(handle: String? = nil) {
-        guard handle == nil else {
+    func setHandle(handle: String? = nil, isAngel: Bool = false) {
+        guard handle == nil && isAngel else {
             userSessionHandle = handle!
             return
         }
