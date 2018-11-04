@@ -11,8 +11,14 @@ class ConnectViewController: UIViewController {
     @IBOutlet weak var methodLabel: UILabel!
     @IBOutlet weak var typeSegment: UISegmentedControl!
     
+    @IBOutlet weak var needToTalkButton: UIButton!
     
-    var statusOptions: [String] = ["Available", "Unavailable", "Do Not Disturb"]
+    @IBOutlet weak var startChatButton: UIButton!
+    @IBOutlet weak var startChatMessage: UILabel!
+    
+    var timer = Timer()
+    var waitTimeSoFar = 0
+    var statusOptions: [String] = ["Unvailable", "Available", "Do Not Disturb"]
     
     var issueOptions: [String] = ["I'm feeling sad", "I'm having a rough day", "Physical Abuse", "Mental Abuse", "Substance Abuse", "I'm here to help someone else in need", "Other"]
     
@@ -33,12 +39,28 @@ class ConnectViewController: UIViewController {
         issueLabel.isHidden = isAngel
         methodLabel.isHidden = isAngel
         typeSegment.isHidden = isAngel
+        needToTalkButton.isHidden = isAngel
+        startChatMessage.isHidden = true
+        startChatButton.isHidden = true
     }
     @IBAction func comeBack(unwindSegue: UIStoryboardSegue){
         print("did it...came back")
     }
     @IBAction func changeSeverity(_ sender: Any) {
         severityInput.text = String(Int(severitySlider.value*10.0))
+    }
+    
+    func simulateMatch(){
+        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { (Timer) in
+            self.waitTimeSoFar += 1
+
+            if self.waitTimeSoFar >= 100 {
+                Timer   .invalidate()
+                self.startChatButton.isHidden = false
+                self.startChatMessage.isHidden = false
+                self.startChatMessage.text = "Someone needs help..."
+            }
+        })
     }
 }
 
@@ -58,5 +80,8 @@ extension ConnectViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("picked: \(self.pickerOptions[row])")
+        if self.pickerOptions[row] == "Available"{
+            self.simulateMatch()
+        }
     }
 }

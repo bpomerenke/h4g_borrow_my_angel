@@ -77,17 +77,33 @@
                                     <constraint firstAttribute="width" constant="206" id="TZz-yA-Ccn"/>
                                 </constraints>
                             </pickerView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rm-O9-fz8">
+                                <rect key="frame" x="142.5" y="448" width="90" height="25"/>
+                                <state key="normal" image="Start_chat_button"/>
+                                <connections>
+                                    <segue destination="vGQ-FI-PV6" kind="show" id="97D-ey-Lzx"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKq-s3-KgA">
+                                <rect key="frame" x="166.5" y="419" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="jgE-Nv-Pf4" secondAttribute="bottom" constant="72" id="0Yg-Sz-RKg"/>
                             <constraint firstItem="YJx-JM-NnW" firstAttribute="top" secondItem="SoD-Pk-OsO" secondAttribute="bottom" constant="56" id="4H9-cl-8Ag"/>
+                            <constraint firstItem="1rm-O9-fz8" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="4Xk-nw-9mN"/>
                             <constraint firstItem="YJx-JM-NnW" firstAttribute="leading" secondItem="SoD-Pk-OsO" secondAttribute="leading" id="FVq-nH-CF2"/>
                             <constraint firstItem="jgE-Nv-Pf4" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="Irn-Mb-fLC"/>
+                            <constraint firstItem="bKq-s3-KgA" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="NpX-35-aG6"/>
                             <constraint firstItem="SUy-jK-QJc" firstAttribute="leading" secondItem="SoD-Pk-OsO" secondAttribute="trailing" constant="-62" id="QeE-uN-eDq"/>
                             <constraint firstItem="o5D-Oe-Vgn" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="100" id="Qqg-l5-qfe"/>
                             <constraint firstItem="zCb-0l-rci" firstAttribute="top" secondItem="N5E-hu-IJb" secondAttribute="bottom" constant="25" id="Qus-fZ-IVm"/>
                             <constraint firstItem="o5D-Oe-Vgn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YJx-JM-NnW" secondAttribute="trailing" constant="8" symbolic="YES" id="Swt-9v-kSB"/>
+                            <constraint firstItem="1rm-O9-fz8" firstAttribute="top" secondItem="bKq-s3-KgA" secondAttribute="bottom" constant="8" id="UAa-E6-8vQ"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N5E-hu-IJb" secondAttribute="trailing" symbolic="YES" id="VtD-ac-6ak"/>
                             <constraint firstItem="SoD-Pk-OsO" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="WIi-R7-o1O"/>
                             <constraint firstItem="SUy-jK-QJc" firstAttribute="top" secondItem="SoD-Pk-OsO" secondAttribute="bottom" constant="3" id="X2m-pj-myh"/>
@@ -96,6 +112,7 @@
                             <constraint firstItem="xSW-fv-p5z" firstAttribute="centerY" secondItem="SUy-jK-QJc" secondAttribute="centerY" id="cy2-iy-pdZ"/>
                             <constraint firstItem="xSW-fv-p5z" firstAttribute="leading" secondItem="SUy-jK-QJc" secondAttribute="trailing" constant="13" id="kLP-Qc-GsK"/>
                             <constraint firstItem="zCb-0l-rci" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="kLt-Kv-v3q"/>
+                            <constraint firstItem="1rm-O9-fz8" firstAttribute="top" secondItem="o5D-Oe-Vgn" secondAttribute="bottom" constant="68" id="lLQ-qT-nKA"/>
                             <constraint firstItem="SUy-jK-QJc" firstAttribute="leading" secondItem="SoD-Pk-OsO" secondAttribute="leading" id="p3K-gA-Z7t"/>
                             <constraint firstItem="N5E-hu-IJb" firstAttribute="leading" secondItem="YJx-JM-NnW" secondAttribute="leading" id="pEu-NM-OpC"/>
                             <constraint firstItem="jgE-Nv-Pf4" firstAttribute="top" secondItem="zCb-0l-rci" secondAttribute="bottom" constant="111" id="sQ2-vY-VOZ"/>
@@ -110,11 +127,14 @@
                         <outlet property="messageInput" destination="039-vg-Thr" id="llo-2X-nll"/>
                         <outlet property="messageSend" destination="gxU-mW-Hmc" id="y5K-cg-4lV"/>
                         <outlet property="methodLabel" destination="N5E-hu-IJb" id="hDe-em-wVd"/>
+                        <outlet property="needToTalkButton" destination="jgE-Nv-Pf4" id="v0h-Nu-Glf"/>
                         <outlet property="pickerInput" destination="o5D-Oe-Vgn" id="jvR-wr-YIV"/>
                         <outlet property="progress" destination="xCn-lq-f9K" id="btd-0Q-GBp"/>
                         <outlet property="severityInput" destination="xSW-fv-p5z" id="jq5-No-VMC"/>
                         <outlet property="severityLabel" destination="SoD-Pk-OsO" id="faV-Oe-PBJ"/>
                         <outlet property="severitySlider" destination="SUy-jK-QJc" id="4OX-GH-5Ok"/>
+                        <outlet property="startChatButton" destination="1rm-O9-fz8" id="ndC-vD-N5b"/>
+                        <outlet property="startChatMessage" destination="bKq-s3-KgA" id="p86-Oh-IG4"/>
                         <outlet property="typeSegment" destination="zCb-0l-rci" id="Re1-XK-Rvb"/>
                     </connections>
                 </viewController>
@@ -136,8 +156,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbn-nN-NXw">
-                                <rect key="frame" x="142" y="81" width="91" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbn-nN-NXw">
+                                <rect key="frame" x="136" y="81" width="103" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="UOw-Zx-zIX"/>
                                 </constraints>
@@ -155,13 +175,6 @@
                                 <connections>
                                     <action selector="sendMessage:" destination="9pv-A4-QxB" eventType="touchUpInside" id="IUb-z6-HUU"/>
                                     <action selector="sendMessage:" destination="vGQ-FI-PV6" eventType="touchUpInside" id="OKv-2O-hJZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94h-AT-COH">
-                                <rect key="frame" x="19" y="76.5" width="71" height="30"/>
-                                <state key="normal" title="&lt; Finished"/>
-                                <connections>
-                                    <segue destination="ZOl-Wf-Cul" kind="unwind" unwindAction="comeBackWithUnwindSegue:" id="Roy-yP-Ryc"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-lq-f9K">
@@ -262,7 +275,6 @@
                             <constraint firstItem="LsH-2L-t1Y" firstAttribute="leading" secondItem="xCn-lq-f9K" secondAttribute="trailing" constant="-271.5" id="EBc-5p-kd0"/>
                             <constraint firstItem="xCn-lq-f9K" firstAttribute="centerX" secondItem="DbH-W8-g80" secondAttribute="centerX" id="JYk-wj-YXn"/>
                             <constraint firstItem="LsH-2L-t1Y" firstAttribute="top" secondItem="xCn-lq-f9K" secondAttribute="bottom" constant="19" id="RYy-Jf-K9k"/>
-                            <constraint firstItem="94h-AT-COH" firstAttribute="centerY" secondItem="bbn-nN-NXw" secondAttribute="centerY" id="Ss8-uE-75Q"/>
                             <constraint firstItem="bbn-nN-NXw" firstAttribute="top" secondItem="DbH-W8-g80" secondAttribute="top" constant="17" id="XoF-L7-dxB"/>
                             <constraint firstItem="LsH-2L-t1Y" firstAttribute="centerX" secondItem="DbH-W8-g80" secondAttribute="centerX" id="Y9N-4B-iwJ"/>
                             <constraint firstItem="DbH-W8-g80" firstAttribute="trailing" secondItem="gxU-mW-Hmc" secondAttribute="trailing" constant="10" id="Z2l-qE-bz3"/>
@@ -272,8 +284,6 @@
                             <constraint firstItem="bbn-nN-NXw" firstAttribute="centerX" secondItem="DbH-W8-g80" secondAttribute="centerX" id="sDr-P2-k8p"/>
                             <constraint firstItem="gxU-mW-Hmc" firstAttribute="leading" secondItem="039-vg-Thr" secondAttribute="trailing" constant="8" id="twL-OX-zn0"/>
                             <constraint firstItem="LsH-2L-t1Y" firstAttribute="leading" secondItem="DbH-W8-g80" secondAttribute="leading" constant="16" id="xpt-hR-4iY"/>
-                            <constraint firstItem="94h-AT-COH" firstAttribute="leading" secondItem="DbH-W8-g80" secondAttribute="leading" constant="19" id="xqH-Ai-wVs"/>
-                            <constraint firstItem="bbn-nN-NXw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="94h-AT-COH" secondAttribute="trailing" constant="8" symbolic="YES" id="ylv-Q5-mbN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DbH-W8-g80"/>
                     </view>
@@ -285,7 +295,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0F9-MT-OJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ZOl-Wf-Cul" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3030" y="-457"/>
         </scene>
@@ -1139,6 +1148,7 @@
         <image name="Apply_to_be_angel" width="700" height="242"/>
         <image name="I_have_acct_button" width="270" height="75"/>
         <image name="Sign_in_button" width="700" height="242"/>
+        <image name="Start_chat_button" width="90" height="25"/>
         <image name="Welcome_logo" width="366" height="206"/>
         <image name="angel_in_chat_icon" width="77" height="83"/>
         <image name="become_an_angel" width="286" height="33"/>
@@ -1159,6 +1169,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zbi-nV-ggc"/>
+        <segue reference="dmk-kb-k2d"/>
         <segue reference="dfw-gd-yIq"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.54859302939999999" green="0.45175759529999998" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
