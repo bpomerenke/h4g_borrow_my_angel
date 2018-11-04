@@ -74,7 +74,7 @@ class MessagingViewController: UIViewController {
                 }
 
                 let previousMessageQuery = channel?.createPreviousMessageListQuery()
-                previousMessageQuery?.loadPreviousMessages(withLimit: 200, reverse: false, completionHandler: { (messages, error) in
+                previousMessageQuery?.loadPreviousMessages(withLimit: 0, reverse: false, completionHandler: { (messages, error) in
                     guard error == nil else {
                         print("error loading previous messages: \(String(describing: error?.description))")
                         return

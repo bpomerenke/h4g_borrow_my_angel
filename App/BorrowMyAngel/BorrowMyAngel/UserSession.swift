@@ -12,7 +12,7 @@ class UserSession {
 
     private init(){
         userSessionHandle = ""
-        channelUrl = "test"
+        channelUrl = ""
     }
     var userSessionHandle: String
     var sBDUser: SBDUser?
@@ -23,7 +23,7 @@ class UserSession {
             userSessionHandle = handle!
             return
         }
-        userSessionHandle = ""
+        userSessionHandle = "PIN " + NSUUID().uuidString
     }
 
     //this whole thing belongs in a server somewhere.  sorry - tp
@@ -109,6 +109,7 @@ class UserSession {
             }
 
             let notConnectedChannel = channels?.first(where: { (channel) -> Bool in
+                print(channel.name)
                 return channel.name == "notConnected"
             })
 
@@ -141,14 +142,33 @@ class UserSession {
 
         print(meetingRoomName)
 
-        //todo: consider avoiding creating if same name???
-        return SBDOpenChannel.createChannel(withName: meetingRoomName, coverUrl: nil, data: nil, operatorUserIds: nil) { (meetingRoomChannel, error) in
+        SBDOpenChannel.createOpenChannelListQuery()?.loadNextPage() { (channels, error) in
             guard error == nil else {
-                print("error getting MyChannel with url: \(String(describing: error?.description))")
+                print("error getting open channel list: \(String(describing: error?.description))")
                 return
             }
 
-            self.channelUrl = meetingRoomChannel!.channelUrl
+            let channelByName = channels?.first(where: { (channel) -> Bool in
+                print(channel.name)
+                return channel.name == meetingRoomName
+            })
+
+            guard channelByName == nil else {
+                SBDOpenChannel.createChannel(withName: meetingRoomName, coverUrl: nil, data: nil, operatorUserIds: nil) { (meetingRoomChannel, error) in
+                    guard error == nil else {
+                        print("error getting MyChannel with url: \(String(describing: error?.description))")
+                        return
+                    }
+
+                    self.channelUrl = meetingRoomChannel!.channelUrl
+
+                    successHandler?()
+                }
+
+                return
+            }
+
+            self.channelUrl = channelByName!.channelUrl
 
             successHandler?()
         }
@@ -193,14 +213,10 @@ class UserSession {
     }
 
     func getHandle() -> String {
-        if(isAngel()) {
-            return userSessionHandle
-        } else {
-            return "PIN " + NSUUID().uuidString
-        }
+        return userSessionHandle
     }
 
     func isAngel() -> Bool {
-        return userSessionHandle.count > 0
+        return userSessionHandle.count > 0 && !userSessionHandle.starts(with: "PIN")
     }
 }
