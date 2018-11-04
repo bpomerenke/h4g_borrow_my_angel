@@ -26,11 +26,60 @@ class ResourcesViewController: UIViewController {
         }
         
         definesPresentationContext = true
+        
+        fetchResources()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let index = resourcesTableView.indexPathForSelectedRow {
             resourcesTableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
+    func fetchResources() {
+        let todosUrl = URL(string: "https://arcane-citadel-61571.herokuapp.com/api/resources")!
+        let todosUrlRequest = URLRequest(url: todosUrl)
+        let session = URLSession.shared
+        DispatchQueue.global().async {
+            let task = session.dataTask(with: todosUrlRequest) {
+                (data, response, error) in
+                guard error == nil else {
+                    print("error calling POST on /todos/1")
+                    print(error!)
+                    return
+                }
+                guard let responseData = data else {
+                    print("Error: did not receive data")
+                    return
+                }
+                
+                // parse the result as JSON, since that's what the API provides
+                do {
+                    let apiResponse = String(data:responseData, encoding: .utf8)!
+                    let wrappedApiResponse = "{ \"resources\": " + apiResponse + "}"
+                    var serviceResources: [ResourceItem] = []
+                    var contacts: [String] = []
+                        let allContacts = try JSONSerialization.jsonObject(with: wrappedApiResponse.data(using: .utf8)!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : NSArray]
+                    
+                    if let arrJSON = allContacts["resources"] {
+                        for index in 0...arrJSON.count-1 {
+                            
+                            let aObject = arrJSON[index] as! [String : AnyObject]
+
+                            serviceResources.append(ResourceItem(title: aObject["name"] as! String, phone: aObject["phone"] as! String, zip: 11111, url: aObject["email"] as! String))
+                        }
+                    }
+                    
+                    self.resourceResults.append(ResourceType(name: "Recently Added", resources: serviceResources))
+                    
+                } catch  {
+                    print("error parsing response from POST on /todos")
+                    return
+                }
+            }
+            
+            task.resume()
+            
         }
     }
     
