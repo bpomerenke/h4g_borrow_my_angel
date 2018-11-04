@@ -58,20 +58,20 @@ class UserSession {
                     }
 
                     //send that user a message to join this room
-                    notConnected?.sendUserMessage("join me in room:" + self.getHandle()) {
-                    (message, error) in
-                        guard error == nil else {
-                            //todo: report failure to end users
-                            return
-                        }
+//                    notConnected?.sendUserMessage("join me in room:" + self.getHandle()) {
+//                    (message, error) in
+//                        guard error == nil else {
+//                            //todo: report failure to end users
+//                            return
+//                        }
 
-                        self.enterMyChannel(notConnected: notConnected!) {() in
-                            print("angel joined his/her own room")
-                        }
+//                        self.enterMyChannel(notConnected: notConnected!) {() in
+//                            print("angel joined his/her own room")
+//                        }
 
                         //that user will have to call enterAngelChannel
                         //tell me that a user joined this channel
-                    }
+//                    }
                     return
                 } else {
                     //find 1 user who 1 is NOT PIN //2. who is in the notConnected channel
@@ -89,12 +89,12 @@ class UserSession {
                     }
 
                     //join SBDGroupChannel by my username
-                    self.enterChannel(channelName: noPinUser!.userId) {(_) in
-                        print("joined angel room")
-                        print(noPinUser?.userId)
+//                    self.enterChannel(channelName: noPinUser!.userId) {(_) in
+//                        print("joined angel room")
+//                        print(noPinUser?.userId)
 
 //                        self.leaveNotConnectedChannel(channel: notConnected!)
-                    }
+//                    }
                 }
                 //todo: check for successful and potentially navigate to the failed connections page
             }
