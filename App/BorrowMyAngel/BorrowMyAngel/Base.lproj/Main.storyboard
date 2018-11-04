@@ -52,11 +52,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrW-hc-QTR">
-                                <rect key="frame" x="165.5" y="208" width="44" height="30"/>
-                                <color key="tintColor" red="0.59215686270000001" green="0.42745098040000001" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Select"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgE-Nv-Pf4">
                                 <rect key="frame" x="52.5" y="471" width="270" height="75"/>
                                 <state key="normal" image="need_to_talk_button"/>
@@ -64,8 +59,8 @@
                                     <segue destination="vGQ-FI-PV6" kind="show" id="dmk-kb-k2d"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zCb-0l-rci">
-                                <rect key="frame" x="52" y="332" width="262" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zCb-0l-rci">
+                                <rect key="frame" x="56.5" y="332" width="262" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="TFG-YR-fUU"/>
                                     <constraint firstAttribute="width" constant="262" id="Tc6-kw-2Ii"/>
@@ -76,6 +71,9 @@
                                 </segments>
                                 <color key="tintColor" red="0.59215686274509804" green="0.42745098039215684" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5D-Oe-Vgn">
+                                <rect key="frame" x="27.5" y="120" width="320" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -84,11 +82,11 @@
                             <constraint firstItem="YJx-JM-NnW" firstAttribute="leading" secondItem="SoD-Pk-OsO" secondAttribute="leading" id="FVq-nH-CF2"/>
                             <constraint firstItem="jgE-Nv-Pf4" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="Irn-Mb-fLC"/>
                             <constraint firstItem="SUy-jK-QJc" firstAttribute="leading" secondItem="SoD-Pk-OsO" secondAttribute="trailing" constant="-62" id="QeE-uN-eDq"/>
+                            <constraint firstItem="o5D-Oe-Vgn" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="100" id="Qqg-l5-qfe"/>
                             <constraint firstItem="zCb-0l-rci" firstAttribute="top" secondItem="N5E-hu-IJb" secondAttribute="bottom" constant="25" id="Qus-fZ-IVm"/>
-                            <constraint firstItem="NrW-hc-QTR" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="VEz-wU-Ul4"/>
                             <constraint firstItem="SoD-Pk-OsO" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="WIi-R7-o1O"/>
                             <constraint firstItem="SUy-jK-QJc" firstAttribute="top" secondItem="SoD-Pk-OsO" secondAttribute="bottom" constant="3" id="X2m-pj-myh"/>
-                            <constraint firstItem="NrW-hc-QTR" firstAttribute="top" secondItem="YJx-JM-NnW" secondAttribute="bottom" constant="21" id="Z3N-Zs-eWp"/>
+                            <constraint firstItem="o5D-Oe-Vgn" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="XZo-Na-xCO"/>
                             <constraint firstItem="SoD-Pk-OsO" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="69" id="cCX-Cw-ACQ"/>
                             <constraint firstItem="xSW-fv-p5z" firstAttribute="centerY" secondItem="SUy-jK-QJc" secondAttribute="centerY" id="cy2-iy-pdZ"/>
                             <constraint firstItem="xSW-fv-p5z" firstAttribute="leading" secondItem="SUy-jK-QJc" secondAttribute="trailing" constant="13" id="kLP-Qc-GsK"/>
@@ -105,6 +103,7 @@
                         <outlet property="connectionStatus" destination="bbn-nN-NXw" id="WFH-CC-6xT"/>
                         <outlet property="messageInput" destination="039-vg-Thr" id="llo-2X-nll"/>
                         <outlet property="messageSend" destination="gxU-mW-Hmc" id="y5K-cg-4lV"/>
+                        <outlet property="pickerInput" destination="o5D-Oe-Vgn" id="jvR-wr-YIV"/>
                         <outlet property="progress" destination="xCn-lq-f9K" id="btd-0Q-GBp"/>
                         <outlet property="severityInput" destination="xSW-fv-p5z" id="jq5-No-VMC"/>
                         <outlet property="severitySlider" destination="SUy-jK-QJc" id="4OX-GH-5Ok"/>
@@ -176,7 +175,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqe-Zd-0v9" customClass="PaddingLabel" customModule="BorrowMyAngel" customModuleProvider="target">
-                                                    <rect key="frame" x="52" y="0.0" width="62" height="40.5"/>
+                                                    <rect key="frame" x="52" y="0.0" width="42" height="20.5"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="Ack-m3-CuD"/>
@@ -220,7 +219,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Og-dE-QEL" customClass="PaddingLabel" customModule="BorrowMyAngel" customModuleProvider="target">
-                                                    <rect key="frame" x="229" y="0.0" width="62" height="40.5"/>
+                                                    <rect key="frame" x="249" y="0.0" width="42" height="20.5"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="uua-lR-4l5"/>
@@ -277,7 +276,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0F9-MT-OJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZOl-Wf-Cul" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3648.8000000000002" y="133.5832083958021"/>
+            <point key="canvasLocation" x="4063" y="-1173"/>
         </scene>
         <!--Resources View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -508,7 +507,6 @@
                         <outlet property="typeSelector" destination="lft-0B-oZA" id="r5k-LR-AKr"/>
                         <outlet property="userHandle" destination="UtC-cf-zn5" id="1pc-34-OYV"/>
                         <outlet property="userPassword" destination="bzH-IB-y2v" id="Il5-AE-muZ"/>
-                        <segue destination="ghU-Kr-Qzh" kind="showDetail" identifier="angelSegue" id="rMG-Oz-e84"/>
                         <segue destination="49e-Tb-3d3" kind="showDetail" identifier="personInNeedSegue" id="RPc-tX-Jjx"/>
                     </connections>
                 </viewController>
@@ -650,53 +648,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2210" y="-1207"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="PQO-Vf-z5h">
-            <objects>
-                <viewController id="C7C-bh-EXg" customClass="AngelStatusViewController" customModule="BorrowMyAngel" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1jD-TM-ROv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1T-c8-juM">
-                                <rect key="frame" x="27.5" y="65" width="320" height="216"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0r-Fi-UiV">
-                                <rect key="frame" x="163.5" y="40" width="48" height="30"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.59215686270000001" green="0.42745098040000001" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1G-ht-rJo">
-                                <rect key="frame" x="52.5" y="510" width="270" height="75"/>
-                                <state key="normal" image="need_to_talk_button"/>
-                                <connections>
-                                    <segue destination="vGQ-FI-PV6" kind="show" id="2hF-9V-miN"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="t0r-Fi-UiV" firstAttribute="centerX" secondItem="wnZ-bb-cRk" secondAttribute="centerX" id="3Ks-Mi-FjI"/>
-                            <constraint firstItem="wnZ-bb-cRk" firstAttribute="trailing" secondItem="W1T-c8-juM" secondAttribute="trailing" constant="27.5" id="XMv-ri-I5L"/>
-                            <constraint firstItem="W1T-c8-juM" firstAttribute="top" secondItem="t0r-Fi-UiV" secondAttribute="bottom" constant="-5" id="a6a-Na-lkA"/>
-                            <constraint firstItem="S1G-ht-rJo" firstAttribute="centerX" secondItem="wnZ-bb-cRk" secondAttribute="centerX" id="jFA-EP-nFf"/>
-                            <constraint firstItem="t0r-Fi-UiV" firstAttribute="top" secondItem="wnZ-bb-cRk" secondAttribute="top" constant="20" id="pzs-On-yFk"/>
-                            <constraint firstItem="wnZ-bb-cRk" firstAttribute="bottom" secondItem="S1G-ht-rJo" secondAttribute="bottom" constant="33" id="sLz-oJ-Y6a"/>
-                            <constraint firstItem="W1T-c8-juM" firstAttribute="centerX" secondItem="wnZ-bb-cRk" secondAttribute="centerX" id="vOb-6j-MFR"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="wnZ-bb-cRk"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="pgf-lt-bkk"/>
-                    <connections>
-                        <outlet property="StatusPicker" destination="W1T-c8-juM" id="qUk-FW-qy2"/>
-                        <outlet property="acceptConnectionButton" destination="S1G-ht-rJo" id="bmC-3M-Dss"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7ZK-J5-FSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2618" y="722"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3og-yr-ifL">
@@ -950,10 +901,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnH-Pj-LKs">
-                                <rect key="frame" x="244" y="572" width="98" height="57"/>
-                                <state key="normal" image="next_button">
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnH-Pj-LKs">
+                                <rect key="frame" x="217" y="572" width="98" height="57"/>
+                                <state key="normal" image="next_button"/>
                                 <connections>
                                     <segue destination="3sf-Tk-QYd" kind="show" id="MVH-c1-rcY"/>
                                 </connections>
@@ -1143,24 +1093,6 @@
             </objects>
             <point key="canvasLocation" x="-351" y="927"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="s8d-W2-ijj">
-            <objects>
-                <tabBarController id="ghU-Kr-Qzh" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h3m-nx-DWw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="C7C-bh-EXg" kind="relationship" relationship="viewControllers" id="g6N-Ej-nlt"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2BM-vn-kel" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1380" y="700"/>
-        </scene>
         <!--Resources-->
         <scene sceneID="gnR-ZG-DN1">
             <objects>
@@ -1208,7 +1140,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="o2z-m1-Rdp"/>
         <segue reference="Z0a-WT-akN"/>
-        <segue reference="2hF-9V-miN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.54859302939999999" green="0.45175759529999998" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
