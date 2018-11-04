@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4538C3FB218D42960058F5D8 /* AngelStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */; };
-		45CCAB77218E20C10048A34C /* AngelApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCAB76218E20C10048A34C /* AngelApplicationViewController.swift */; };
 		5A40C62C218D7804001E8412 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62B218D7804001E8412 /* MessagingViewController.swift */; };
 		5A40C62E218D7E64001E8412 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62D218D7E64001E8412 /* LoginViewController.swift */; };
 		5A460ABF218D8D1900FA77F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A460ABD218D8D1900FA77F7 /* Main.storyboard */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelStatusViewController.swift; sourceTree = "<group>"; };
-		45CCAB76218E20C10048A34C /* AngelApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngelApplicationViewController.swift; sourceTree = "<group>"; tabWidth = 8; usesTabs = 0; };
 		4CA1D90DABB7E8E4572F5D09 /* Pods-BorrowMyAngelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowMyAngelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowMyAngelTests/Pods-BorrowMyAngelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A40C62B218D7804001E8412 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		5A40C62D218D7E64001E8412 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				5B10F68B218D062500344011 /* Info.plist */,
-				45CCAB76218E20C10048A34C /* AngelApplicationViewController.swift */,
 				4538C3FA218D42960058F5D8 /* AngelStatusViewController.swift */,
 				5B10F67D218D062200344011 /* AppDelegate.swift */,
 				5B10F67F218D062300344011 /* ConnectViewController.swift */,
@@ -355,7 +352,6 @@
 				5A935CE0218E1E5500077597 /* LandingViewController.swift in Sources */,
 				5B10F682218D062300344011 /* ResourcesViewController.swift in Sources */,
 				5A7FE0B0218DFC3F005F99A2 /* UserSession.swift in Sources */,
-				45CCAB77218E20C10048A34C /* AngelApplicationViewController.swift in Sources */,
 				5B10F67E218D062200344011 /* AppDelegate.swift in Sources */,
 				5A935CE2218E51AF00077597 /* MessageTableViewCell.swift in Sources */,
 				5A935CE4218E829F00077597 /* PaddingLabel.swift in Sources */,
