@@ -651,22 +651,6 @@
             </objects>
             <point key="canvasLocation" x="2210" y="-1207"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="XRo-CR-Apw">
-            <objects>
-                <viewController id="FVo-1Y-j6u" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tzw-jo-MA3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="vBe-Ew-zVC"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Kgo-C4-Om4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6tt-g4-0jN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1380" y="1475"/>
-        </scene>
         <!--Item 1-->
         <scene sceneID="PQO-Vf-z5h">
             <objects>
@@ -1181,7 +1165,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="C7C-bh-EXg" kind="relationship" relationship="viewControllers" id="g6N-Ej-nlt"/>
-                        <segue destination="FVo-1Y-j6u" kind="relationship" relationship="viewControllers" id="rZ3-aH-FxC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BM-vn-kel" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1232,7 +1215,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="o2z-m1-Rdp"/>
         <segue reference="Z0a-WT-akN"/>
-        <segue reference="dmk-kb-k2d"/>
+        <segue reference="2hF-9V-miN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.54859302939999999" green="0.45175759529999998" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
