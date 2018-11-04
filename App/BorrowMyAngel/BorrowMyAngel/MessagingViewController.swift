@@ -12,7 +12,7 @@ class MessagingViewController: UIViewController {
     
     private var channel: SBDOpenChannel?
     private var sbdApplicationId = ProcessInfo.processInfo.environment["SENDBIRD_APP_ID"] ?? ""
-    private var channelUrl = "test"
+    private var channelUrl = ""
     private var timer = Timer()
     private var progressVal = 00.0
     
@@ -30,22 +30,24 @@ class MessagingViewController: UIViewController {
         
         self.messageTableView.layer.cornerRadius = 10
         self.messageInput.delegate = self
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (Timer) in
+        registerUser()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { (Timer) in
             self.progressVal += 1
             self.progressBar.progress = Float(self.progressVal / 100.0)
             
             if self.progressVal >= 100 {
                 Timer   .invalidate()
+                self.channelUrl = UserSession.sharedInstance.getRoomUrl()
                 self.connectionStatus.text = "Connected"
                 self.showMessageView()
+                self.processDummyMessagesOnTestChannel()
             }
         })
-        processDummyMessagesOnTestChannel()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: MessagingViewController.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: MessagingViewController.keyboardWillHideNotification, object: nil)
     }
 
-    func processDummyMessagesOnTestChannel(){
+    func registerUser(){
         SBDMain.initWithApplicationId(sbdApplicationId)
         SBDMain.add(self, identifier: "messagingVC")
         SBDMain.connect(withUserId: UserSession.sharedInstance.getHandle()) { (user, error) in
@@ -55,41 +57,43 @@ class MessagingViewController: UIViewController {
             }
 
             UserSession.sharedInstance.setSBDUser(user: SBDMain.getCurrentUser())
+        }
+    }
 
-            SBDOpenChannel.getWithUrl(self.channelUrl) { (channel, error) in
+    func processDummyMessagesOnTestChannel(){
+        SBDOpenChannel.getWithUrl(self.channelUrl) { (channel, error) in
+            guard error == nil else {
+                print("error getting channel with DummyMessages url: \(String(describing: error?.description))")
+                return
+            }
+
+            channel?.enter(completionHandler: { (error) in
                 guard error == nil else {
-                    print("error getting channel with url: \(String(describing: error?.description))")
+                    print("error entering channel: \(String(describing: error?.description))")
                     return
                 }
 
-                channel?.enter(completionHandler: { (error) in
+                let previousMessageQuery = channel?.createPreviousMessageListQuery()
+                previousMessageQuery?.loadPreviousMessages(withLimit: 0, reverse: false, completionHandler: { (messages, error) in
                     guard error == nil else {
-                        print("error entering channel: \(String(describing: error?.description))")
+                        print("error loading previous messages: \(String(describing: error?.description))")
                         return
                     }
 
-                    let previousMessageQuery = channel?.createPreviousMessageListQuery()
-                    previousMessageQuery?.loadPreviousMessages(withLimit: 200, reverse: false, completionHandler: { (messages, error) in
-                        guard error == nil else {
-                            print("error loading previous messages: \(String(describing: error?.description))")
-                            return
-                        }
-
-                        messages?.forEach { message in
-                            self.addMessageToView(with:message)
-                        }
-                    })
-
-                    self.channel = channel
+                    messages?.forEach { message in
+                        self.addMessageToView(with:message)
+                    }
                 })
-            }
+
+                self.channel = channel
+            })
         }
     }
-    
+
     func addMessageToView(with: SBDBaseMessage) {
         switch with {
         case let userMessage as SBDUserMessage:
-            print("error adding message: \(String(describing: userMessage.message))")
+            //todo: sender is angel if the sender is your angel
             let messageSender = UserSession.sharedInstance.getHandle() == userMessage.sender!.userId ? "you" : UserSession.sharedInstance.isAngel() ? "PIN" : userMessage.sender!.userId
             
             messages.append(MessageItem(sender: messageSender, text: userMessage.message!))
@@ -154,7 +158,7 @@ extension MessagingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let type = messages[indexPath.row].sender == "you" ? "messageCellViewPerson" : "messageCellViewAngel"
+        let type = ((UserSession.sharedInstance.isAngel() && messages[indexPath.row].sender == "you") || (!UserSession.sharedInstance.isAngel() && messages[indexPath.row].sender != "you")) ? "messageCellViewAngel" : "messageCellViewPerson"
         let cell = tableView.dequeueReusableCell(withIdentifier: type) as! MessageTableViewCell
         
         cell.messageText.text = messages[indexPath.row].text
