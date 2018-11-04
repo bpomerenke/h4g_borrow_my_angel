@@ -65,10 +65,6 @@ class UserSession {
                             return
                         }
 
-                        self.enterMyChannel() {() in
-                            print("angel  room")
-                        }
-
                         //that user will have to call enterAngelChannel
                         //tell me that a user joined this channel
                     }
@@ -78,11 +74,6 @@ class UserSession {
                     let noPinUser = users?.first(){ (user) -> Bool in
                         return !user.userId.starts(with: "PIN")
                     }
-
-                    print("noPinUser")
-                    users?.forEach({ (u) in
-                        print(u.userId)
-                    })
 
                     guard noPinUser != nil else {
                         //todo: notify user that no one is available
@@ -110,7 +101,7 @@ class UserSession {
             }
 
             let notConnectedChannel = channels?.first(where: { (channel) -> Bool in
-                print(channel.name)
+
                 return channel.name == "notConnected"
             })
 
@@ -141,6 +132,7 @@ class UserSession {
     func enterMyChannel(successHandler: (() -> Void)?) {
         let meetingRoomName = self.getHandle()
 
+        print("meetingRoomName")
         print(meetingRoomName)
 
         SBDOpenChannel.createOpenChannelListQuery()?.loadNextPage() { (channels, error) in
@@ -207,8 +199,6 @@ class UserSession {
     }
 
     func getRoomUrl() -> String{
-        print("channel URL")
-        print(channelUrl)
 
         return channelUrl
     }

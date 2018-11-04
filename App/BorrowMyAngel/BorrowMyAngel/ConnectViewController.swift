@@ -10,7 +10,6 @@ class ConnectViewController: UIViewController {
     }
     
     @IBAction func comeBack(unwindSegue: UIStoryboardSegue){
-        print("did it...came back")
     }
     @IBAction func changeSeverity(_ sender: Any) {
         severityInput.text = String(Int(severitySlider.value*10.0))

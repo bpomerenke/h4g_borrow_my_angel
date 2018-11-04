@@ -13,7 +13,6 @@ class AngelStatusViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
 
     @IBAction func comeBack(unwindSegue: UIStoryboardSegue){
-        print("did it...came back")
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
