@@ -65,8 +65,8 @@ class UserSession {
                             return
                         }
 
-                        self.enterMyChannel(notConnected: notConnected!) {() in
-                            print("angel joined his/her own room")
+                        self.enterMyChannel() {() in
+                            print("angel  room")
                         }
 
                         //that user will have to call enterAngelChannel
@@ -85,6 +85,7 @@ class UserSession {
                     })
 
                     guard noPinUser != nil else {
+                        //todo: notify user that no one is available
                         return
                     }
 
@@ -93,7 +94,7 @@ class UserSession {
                         print("joined angel room")
                         print(noPinUser?.userId)
 
-//                        self.leaveNotConnectedChannel(channel: notConnected!)
+                        self.leaveNotConnectedChannel(channel: notConnected!)
                     }
                 }
                 //todo: check for successful and potentially navigate to the failed connections page
@@ -137,7 +138,7 @@ class UserSession {
         }
     }
 
-    func enterMyChannel(notConnected: SBDOpenChannel?, successHandler: (() -> Void)?) {
+    func enterMyChannel(successHandler: (() -> Void)?) {
         let meetingRoomName = self.getHandle()
 
         print(meetingRoomName)
