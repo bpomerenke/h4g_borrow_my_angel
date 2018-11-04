@@ -63,7 +63,7 @@ class MessagingViewController: UIViewController {
     func processDummyMessagesOnTestChannel(){
         SBDOpenChannel.getWithUrl(self.channelUrl) { (channel, error) in
             guard error == nil else {
-                print("error getting channel with url: \(String(describing: error?.description))")
+                print("error getting channel with DummyMessages url: \(String(describing: error?.description))")
                 return
             }
 

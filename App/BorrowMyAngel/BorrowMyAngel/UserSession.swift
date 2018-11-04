@@ -32,7 +32,7 @@ class UserSession {
     func setSBDUser(user: SBDUser?) {
         sBDUser = user
 
-        enterNotConnectedChannel() { (notConnected) in
+        self.enterNotConnectedChannel() { (notConnected) in
             guard notConnected != nil else {
                 return
             }
@@ -41,14 +41,15 @@ class UserSession {
             print("participant count:")
             print(notConnected?.participantCount)
 
-            if(self.isAngel()) {
-                self.enterMyChannel() {() in
-                    print("angel joined his/her own room")
+            self.getAllUsers(notConnected: notConnected) { (users) in
+                guard notConnected != nil else {
+                    return
+                }
 
-                    self.getAllUsers(notConnected: notConnected) { (users) in
-                        guard notConnected != nil else {
-                            return
-                        }
+                if(self.isAngel()) {
+                    self.enterMyChannel(notConnected: notConnected!) {() in
+                        print("angel joined his/her own room")
+
 
                         //todo: get all users and find 1 user who 1. is PIN //2. who is in the notConnected channel //3. is has connection status
 
@@ -69,22 +70,20 @@ class UserSession {
                         //that user will have to call enterAngelChannel
                         //tell me that a user joined this channel
                     }
-
-
                     return
+                } else {
+                    //get all users and find 1 user who 1 is NOT PIN //2. who is in the notConnected channel
+                    //join SBDGroupChannel by my username
                 }
-            } else {
-                //get all users and find 1 user who 1 is NOT PIN //2. who is in the notConnected channel
-                //join SBDGroupChannel by my username
+                //todo: check for successful and potentially navigate to the failed connections page
             }
-            //todo: check for successful and potentially navigate to the failed connections page
         }
     }
 
     func enterNotConnectedChannel(successHandler: ((SBDOpenChannel?) -> Void)?) {
         return SBDOpenChannel.getWithUrl("notConnected"){ (channel, error) in
             guard error == nil else {
-                print("error getting channel with url: \(String(describing: error?.description))")
+                print("error getting channel with NotConnected url: \(String(describing: error?.description))")
                 return
             }
 
@@ -94,26 +93,24 @@ class UserSession {
         }
     }
 
-    func enterMyChannel(successHandler: (() -> Void)?) {
-        let meetingRoomName = "test"//self.getHandle()
+    func enterMyChannel(notConnected: SBDOpenChannel?, successHandler: (() -> Void)?) {
+        let meetingRoomName = self.getHandle()
 
-        enterNotConnectedChannel() { (channel) in
-            guard channel != nil else {
+        self.leaveNotConnectedChannel(channel: notConnected!)
+
+
+        print(meetingRoomName)
+
+        //todo: consider avoiding creating if same name???
+        return SBDOpenChannel.createChannel(withName: meetingRoomName, coverUrl: nil, data: nil, operatorUserIds: nil) { (meetingRoomChannel, error) in
+            guard error == nil else {
+                print("error getting MyChannel with url: \(String(describing: error?.description))")
                 return
             }
 
-            self.leaveNotConnectedChannel(channel: channel!)
+            self.channelUrl = meetingRoomChannel!.channelUrl
 
-            return SBDOpenChannel.getWithUrl(meetingRoomName){ (channel, error) in
-                guard error == nil else {
-                    print("error getting channel with url: \(String(describing: error?.description))")
-                    return
-                }
-
-                self.channelUrl = channel!.channelUrl
-
-                successHandler?()
-            }
+            successHandler?()
         }
     }
 
