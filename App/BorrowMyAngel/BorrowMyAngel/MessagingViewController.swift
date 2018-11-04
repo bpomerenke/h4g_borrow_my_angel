@@ -27,6 +27,8 @@ class MessagingViewController: UIViewController {
         super.viewDidLoad()
         self.messageTableView.delegate = self
         self.messageTableView.dataSource = self
+        
+        self.messageTableView.layer.cornerRadius = 10
         self.messageInput.delegate = self
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (Timer) in
             self.progressVal += 1
@@ -152,15 +154,18 @@ extension MessagingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCellView") as! MessageTableViewCell
+        let type = messages[indexPath.row].sender == "you" ? "messageCellViewPerson" : "messageCellViewAngel"
+        let cell = tableView.dequeueReusableCell(withIdentifier: type) as! MessageTableViewCell
         
-        cell.messageSender.text = messages[indexPath.row].sender + ":"
         cell.messageText.text = messages[indexPath.row].text
+        cell.messageText.layer.cornerRadius = 15
+        cell.messageText.layer.masksToBounds = true
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (CGFloat(messages[indexPath.row].text.count / 20) + 1) * 30 + 15
+        let calculatedMax = (CGFloat(messages[indexPath.row].text.count / 20) + 1) * 20
+        return calculatedMax > 60 ? calculatedMax : 60
     }
 }
 
