@@ -31,7 +31,7 @@ class MessagingViewController: UIViewController {
         self.messageTableView.layer.cornerRadius = 10
         self.messageInput.delegate = self
         registerUser()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.10, repeats: true, block: { (Timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { (Timer) in
             self.progressVal += 1
             self.progressBar.progress = Float(self.progressVal / 100.0)
             

@@ -61,10 +61,11 @@ class UserSession {
                         notConnected?.sendUserMessage("join me in room:" + self.getHandle()) {
                         (message, error) in
                             guard error == nil else {
+                                //todo: report failure to end users
                                 return
                             }
 
-                            //todo: report failure
+                            self.leaveNotConnectedChannel(channel: notConnected!)
                         }
 
                         //that user will have to call enterAngelChannel
@@ -94,10 +95,7 @@ class UserSession {
     }
 
     func enterMyChannel(notConnected: SBDOpenChannel?, successHandler: (() -> Void)?) {
-        let meetingRoomName = self.getHandle()
-
-        self.leaveNotConnectedChannel(channel: notConnected!)
-
+        let meetingRoomName = "notConnected"//self.getHandle()
 
         print(meetingRoomName)
 
@@ -108,7 +106,7 @@ class UserSession {
                 return
             }
 
-            self.channelUrl = meetingRoomChannel!.channelUrl
+            self.channelUrl = meetingRoomChannel!.name
 
             successHandler?()
         }
