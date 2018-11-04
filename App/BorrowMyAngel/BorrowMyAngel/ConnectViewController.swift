@@ -13,6 +13,7 @@ class ConnectViewController: UIViewController {
     
     @IBOutlet weak var needToTalkButton: UIButton!
     
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var startChatButton: UIButton!
     @IBOutlet weak var startChatMessage: UILabel!
     
@@ -25,6 +26,7 @@ class ConnectViewController: UIViewController {
     var pickerOptions: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        shadowView.layer.cornerRadius = 10
         self.pickerInput.delegate = self
         self.pickerInput.dataSource = self
         updateView()
