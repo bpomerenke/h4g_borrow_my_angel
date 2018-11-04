@@ -40,10 +40,8 @@ class LoginViewController: UIViewController {
     @IBAction func signIn(_ sender: Any) {
         if self.typeSelector.selectedSegmentIndex == 0 {
             UserSession.sharedInstance.setHandle(handle: self.userHandle.text)
-            self.performSegue(withIdentifier: "angelSegue", sender: self)
         } else {
             UserSession.sharedInstance.setHandle()
-            self.performSegue(withIdentifier: "personInNeedSegue", sender: self)
         }
     }
 }
