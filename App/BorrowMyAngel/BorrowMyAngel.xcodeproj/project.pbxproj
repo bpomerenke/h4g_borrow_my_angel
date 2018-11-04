@@ -16,6 +16,7 @@
 		5A935CE0218E1E5500077597 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A935CDF218E1E5500077597 /* LandingViewController.swift */; };
 		5A935CE2218E51AF00077597 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A935CE1218E51AF00077597 /* MessageTableViewCell.swift */; };
 		5A935CE4218E829F00077597 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A935CE3218E829F00077597 /* PaddingLabel.swift */; };
+		5A935CE6218EDDEC00077597 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A935CE5218EDDEC00077597 /* CreateAccountViewController.swift */; };
 		5B10F67E218D062200344011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F67D218D062200344011 /* AppDelegate.swift */; };
 		5B10F680218D062300344011 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F67F218D062300344011 /* ConnectViewController.swift */; };
 		5B10F682218D062300344011 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10F681218D062300344011 /* ResourcesViewController.swift */; };
@@ -49,6 +50,7 @@
 		5A935CDF218E1E5500077597 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		5A935CE1218E51AF00077597 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		5A935CE3218E829F00077597 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		5A935CE5218EDDEC00077597 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		5B10F67A218D062200344011 /* BorrowMyAngel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorrowMyAngel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10F67D218D062200344011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10F67F218D062300344011 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				5A460ABD218D8D1900FA77F7 /* Main.storyboard */,
 				5B214007218E239F00AA5CA8 /* Models */,
 				5A935CE1218E51AF00077597 /* MessageTableViewCell.swift */,
+				5A935CE5218EDDEC00077597 /* CreateAccountViewController.swift */,
 			);
 			path = BorrowMyAngel;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A935CE6218EDDEC00077597 /* CreateAccountViewController.swift in Sources */,
 				5A40C62E218D7E64001E8412 /* LoginViewController.swift in Sources */,
 				4538C3FB218D42960058F5D8 /* AngelStatusViewController.swift in Sources */,
 				5A935CE0218E1E5500077597 /* LandingViewController.swift in Sources */,

@@ -1082,14 +1082,21 @@
             </objects>
             <point key="canvasLocation" x="-701.60000000000002" y="778.56071964017997"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Account View Controller-->
         <scene sceneID="Qse-et-UXG">
             <objects>
-                <viewController id="4du-ky-XbM" sceneMemberID="viewController">
+                <viewController id="4du-ky-XbM" customClass="CreateAccountViewController" customModule="BorrowMyAngel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ki-pz-k8i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhX-Nc-m9T">
+                                <rect key="frame" x="18.5" y="53" width="338" height="525"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="338" id="phB-UW-ODq"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Creation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY3-wa-quL">
                                 <rect key="frame" x="37.5" y="82" width="300" height="42"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1140,25 +1147,31 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.92549019607843142" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZtC-u9-JC5" firstAttribute="top" secondItem="Nbg-LR-FsQ" secondAttribute="bottom" constant="116" id="3T2-8C-bD2"/>
                             <constraint firstItem="3af-gc-w1J" firstAttribute="centerX" secondItem="HzT-vg-3Qh" secondAttribute="centerX" id="3b1-aA-9Qq"/>
                             <constraint firstItem="Nbg-LR-FsQ" firstAttribute="top" secondItem="3af-gc-w1J" secondAttribute="bottom" constant="8" id="9UN-g4-3jF"/>
+                            <constraint firstItem="HzT-vg-3Qh" firstAttribute="bottom" secondItem="mhX-Nc-m9T" secondAttribute="bottom" constant="89" id="9d9-Ed-dOA"/>
                             <constraint firstItem="wFn-OS-Ie5" firstAttribute="centerX" secondItem="HzT-vg-3Qh" secondAttribute="centerX" id="AGu-gd-j2e"/>
+                            <constraint firstItem="mhX-Nc-m9T" firstAttribute="centerX" secondItem="HzT-vg-3Qh" secondAttribute="centerX" id="F0G-IT-KUO"/>
                             <constraint firstItem="3af-gc-w1J" firstAttribute="top" secondItem="wFn-OS-Ie5" secondAttribute="bottom" constant="8" id="Mie-Y5-DM3"/>
                             <constraint firstItem="eY3-wa-quL" firstAttribute="centerX" secondItem="HzT-vg-3Qh" secondAttribute="centerX" id="WUG-Ff-baT"/>
                             <constraint firstItem="wFn-OS-Ie5" firstAttribute="top" secondItem="eY3-wa-quL" secondAttribute="bottom" constant="36" id="WhN-yc-l09"/>
                             <constraint firstItem="eY3-wa-quL" firstAttribute="top" secondItem="HzT-vg-3Qh" secondAttribute="top" constant="62" id="YTk-9V-wwB"/>
                             <constraint firstItem="ZtC-u9-JC5" firstAttribute="centerX" secondItem="HzT-vg-3Qh" secondAttribute="centerX" id="a2k-eA-wCC"/>
+                            <constraint firstItem="mhX-Nc-m9T" firstAttribute="top" secondItem="HzT-vg-3Qh" secondAttribute="top" constant="33" id="f87-Pf-O6F"/>
                             <constraint firstItem="Nbg-LR-FsQ" firstAttribute="centerX" secondItem="HzT-vg-3Qh" secondAttribute="centerX" id="woC-OS-w5v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HzT-vg-3Qh"/>
                     </view>
+                    <connections>
+                        <outlet property="shadowView" destination="mhX-Nc-m9T" id="KvS-Xg-HCz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87Z-RA-3mz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588" y="670.61469265367316"/>
+            <point key="canvasLocation" x="588" y="669.71514242878561"/>
         </scene>
         <!--Resources-->
         <scene sceneID="gnR-ZG-DN1">
@@ -1224,7 +1237,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="jnz-Mk-gOg"/>
         <segue reference="dmk-kb-k2d"/>
-        <segue reference="dfw-gd-yIq"/>
+        <segue reference="Aoz-pT-q2v"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.54859302939999999" green="0.45175759529999998" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
