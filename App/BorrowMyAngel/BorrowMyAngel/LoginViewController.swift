@@ -6,6 +6,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userHandle: UITextField!
     @IBOutlet weak var userPassword: UITextField!
     @IBOutlet weak var typeSelector: UISegmentedControl!
+    @IBOutlet weak var signinButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         shadowView.layer.cornerRadius = 10
@@ -29,8 +30,12 @@ class LoginViewController: UIViewController {
 
         userHandle.tag = 0
         userPassword.tag = 1
+        signinButton.isEnabled = false
     }
     
+    @IBAction func handleEntered(_ sender: Any) {
+        signinButton.isEnabled = true
+    }
     @IBAction func signIn(_ sender: Any) {
         if self.typeSelector.selectedSegmentIndex == 0 {
             UserSession.sharedInstance.setHandle(handle: self.userHandle.text)
@@ -41,6 +46,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         userHandle.resignFirstResponder()
         userPassword.resignFirstResponder()

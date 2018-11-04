@@ -442,6 +442,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                <connections>
+                                    <action selector="handleEntered:" destination="3PV-7c-ZW2" eventType="editingDidEnd" id="2UT-CB-3uM"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-IB-y2v">
                                 <rect key="frame" x="57.5" y="237" width="260" height="30"/>
@@ -521,6 +524,7 @@
                     <navigationItem key="navigationItem" id="JQR-Jw-y2E"/>
                     <connections>
                         <outlet property="shadowView" destination="edG-Pg-0Ky" id="4YL-F1-duL"/>
+                        <outlet property="signinButton" destination="Gor-fX-img" id="pGO-iB-hew"/>
                         <outlet property="typeSelector" destination="lft-0B-oZA" id="r5k-LR-AKr"/>
                         <outlet property="userHandle" destination="UtC-cf-zn5" id="1pc-34-OYV"/>
                         <outlet property="userPassword" destination="bzH-IB-y2v" id="Il5-AE-muZ"/>
