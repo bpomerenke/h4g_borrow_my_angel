@@ -158,7 +158,7 @@ extension MessagingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let type = UserSession.sharedInstance.isAngel() ? "messageCellViewAngel" : "messageCellViewPerson"
+        let type = (UserSession.sharedInstance.isAngel() && messages[indexPath.row].sender == "you") || (!UserSession.sharedInstance.isAngel() && messages[indexPath.row].sender != "you") ? "messageCellViewAngel" : "messageCellViewPerson"
         let cell = tableView.dequeueReusableCell(withIdentifier: type) as! MessageTableViewCell
         
         cell.messageText.text = messages[indexPath.row].text
