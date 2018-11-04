@@ -758,12 +758,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1o-TJ-Ddp">
-                                <rect key="frame" x="270" y="590" width="45" height="39"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.71764705880000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1o-TJ-Ddp">
+                                <rect key="frame" x="217" y="572" width="98" height="57"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Next">
+                                <state key="normal" image="next_button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -786,11 +784,9 @@
                                     <constraint firstAttribute="height" constant="128" id="m23-CN-d3r"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zp-gj-ptz">
-                                <rect key="frame" x="60" y="590" width="67" height="39"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.71764705880000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Cancel">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zp-gj-ptz">
+                                <rect key="frame" x="60" y="572" width="98" height="57"/>
+                                <state key="normal" image="cancel_button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -843,19 +839,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPK-IV-ndF">
-                                <rect key="frame" x="270" y="590" width="45" height="39"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.71764705880000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Next">
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPK-IV-ndF">
+                                <rect key="frame" x="217" y="572" width="98" height="57"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <state key="normal" image="next_button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="con-9o-eFb" kind="show" id="En5-ps-2cg"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A9k-53-ZHe">
-                                <rect key="frame" x="23" y="233" width="329" height="347"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A9k-53-ZHe">
+                                <rect key="frame" x="23" y="233" width="329" height="303"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="347" id="uaA-pq-6MS"/>
@@ -876,12 +871,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtR-0T-l0O">
-                                <rect key="frame" x="60" y="590" width="67" height="39"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.71764705880000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtR-0T-l0O">
+                                <rect key="frame" x="60" y="572" width="98" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" image="cancel_button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -905,7 +899,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sb7-wf-upd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2135" y="1872"/>
+            <point key="canvasLocation" x="-2135.1999999999998" y="1871.5142428785609"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Dlh-fo-pBl">
@@ -950,20 +944,15 @@
                                     <constraint firstAttribute="height" constant="128" id="kXb-iG-tJ3"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yG-Ja-y6H">
-                                <rect key="frame" x="60" y="589" width="70" height="40"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.71764705880000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Cancel">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yG-Ja-y6H">
+                                <rect key="frame" x="60" y="572" width="98" height="57"/>
+                                <state key="normal" image="cancel_button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnH-Pj-LKs">
-                                <rect key="frame" x="270" y="590" width="45" height="39"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.71764705880000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnH-Pj-LKs">
+                                <rect key="frame" x="244" y="572" width="98" height="57"/>
+                                <state key="normal" image="next_button">
                                 </state>
                                 <connections>
                                     <segue destination="3sf-Tk-QYd" kind="show" id="MVH-c1-rcY"/>
@@ -1042,12 +1031,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fo-QN-PlK">
-                                <rect key="frame" x="153.5" y="594" width="68" height="39"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.71764705880000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fo-QN-PlK">
+                                <rect key="frame" x="54" y="535" width="267" height="98"/>
                                 <color key="tintColor" red="0.82352941180000006" green="0.71764705880000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Submit">
+                                <state key="normal" image="submit_button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1060,14 +1047,17 @@
                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                         </accessibility>
                         <constraints>
+                            <constraint firstItem="9fo-QN-PlK" firstAttribute="top" secondItem="ubS-Cf-tIW" secondAttribute="bottom" constant="-12" id="30a-qn-k2c"/>
                             <constraint firstItem="3Bg-ao-zUD" firstAttribute="top" secondItem="4rr-lR-YsE" secondAttribute="bottom" constant="2" id="6w3-fX-uia"/>
                             <constraint firstItem="4rr-lR-YsE" firstAttribute="leading" secondItem="kXX-wl-x6L" secondAttribute="leading" id="7cP-eU-RPU"/>
                             <constraint firstItem="3Bg-ao-zUD" firstAttribute="leading" secondItem="kXX-wl-x6L" secondAttribute="leading" constant="25" id="F8d-35-8lz"/>
+                            <constraint firstItem="9fo-QN-PlK" firstAttribute="centerX" secondItem="kXX-wl-x6L" secondAttribute="centerX" id="KVp-kV-e1j"/>
                             <constraint firstItem="k1R-aM-xEZ" firstAttribute="top" secondItem="3Bg-ao-zUD" secondAttribute="bottom" constant="24" id="KcJ-gr-Kwx"/>
                             <constraint firstItem="ubS-Cf-tIW" firstAttribute="centerX" secondItem="kXX-wl-x6L" secondAttribute="centerX" id="Phe-Ef-6bP"/>
                             <constraint firstItem="kXX-wl-x6L" firstAttribute="bottom" secondItem="9fo-QN-PlK" secondAttribute="bottom" constant="34" id="U54-0O-5c7"/>
                             <constraint firstItem="k1R-aM-xEZ" firstAttribute="centerX" secondItem="kXX-wl-x6L" secondAttribute="centerX" id="X4R-fM-u6I"/>
                             <constraint firstItem="ubS-Cf-tIW" firstAttribute="top" secondItem="k1R-aM-xEZ" secondAttribute="bottom" constant="40" id="YjW-pw-lbm"/>
+                            <constraint firstItem="9fo-QN-PlK" firstAttribute="leading" secondItem="kXX-wl-x6L" secondAttribute="leading" constant="54" id="bNr-xa-mqu"/>
                             <constraint firstItem="k1R-aM-xEZ" firstAttribute="centerX" secondItem="9fo-QN-PlK" secondAttribute="centerX" id="gq0-93-5ID"/>
                             <constraint firstItem="kXX-wl-x6L" firstAttribute="top" secondItem="4rr-lR-YsE" secondAttribute="top" constant="3" id="sz0-Bz-bgR"/>
                         </constraints>
@@ -1076,7 +1066,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dd1-w8-aAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1783" y="866"/>
+            <point key="canvasLocation" x="-1783.2" y="865.81709145427294"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Qse-et-UXG">
@@ -1198,6 +1188,7 @@
         <image name="Welcome_logo" width="366" height="206"/>
         <image name="angel_in_chat_icon" width="77" height="83"/>
         <image name="become_an_angel" width="286" height="33"/>
+        <image name="cancel_button" width="98" height="57"/>
         <image name="chat_as_guest_button" width="270" height="75"/>
         <image name="create_acct_button" width="270" height="75"/>
         <image name="create_sign_in_button" width="270" height="75"/>
@@ -1206,9 +1197,11 @@
         <image name="first" width="30" height="30"/>
         <image name="instagram_icon" width="48" height="49"/>
         <image name="need_to_talk_button" width="270" height="75"/>
+        <image name="next_button" width="98" height="57"/>
         <image name="plan_welcome_page_final" width="640" height="960"/>
         <image name="second" width="30" height="30"/>
         <image name="send_in_chat_button" width="98" height="57"/>
+        <image name="submit_button" width="700" height="242"/>
         <image name="twitter_icon" width="48" height="49"/>
         <image name="user_acct_button" width="118" height="105"/>
     </resources>
