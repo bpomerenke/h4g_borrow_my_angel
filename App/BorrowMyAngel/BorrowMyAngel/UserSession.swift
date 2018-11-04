@@ -65,7 +65,7 @@ class UserSession {
                                 return
                             }
 
-                            self.leaveNotConnectedChannel(channel: notConnected!)
+//                            self.leaveNotConnectedChannel(channel: notConnected!)
                         }
 
                         //that user will have to call enterAngelChannel
@@ -95,21 +95,21 @@ class UserSession {
     }
 
     func enterMyChannel(notConnected: SBDOpenChannel?, successHandler: (() -> Void)?) {
-        let meetingRoomName = "notConnected"//self.getHandle()
-
-        print(meetingRoomName)
-
-        //todo: consider avoiding creating if same name???
-        return SBDOpenChannel.createChannel(withName: meetingRoomName, coverUrl: nil, data: nil, operatorUserIds: nil) { (meetingRoomChannel, error) in
-            guard error == nil else {
-                print("error getting MyChannel with url: \(String(describing: error?.description))")
-                return
-            }
-
-            self.channelUrl = meetingRoomChannel!.name
+//        let meetingRoomName = "notConnected"//self.getHandle()
+//
+//        print(meetingRoomName)
+//
+//        //todo: consider avoiding creating if same name???
+//        return SBDOpenChannel.createChannel(withName: meetingRoomName, coverUrl: nil, data: nil, operatorUserIds: nil) { (meetingRoomChannel, error) in
+//            guard error == nil else {
+//                print("error getting MyChannel with url: \(String(describing: error?.description))")
+//                return
+//            }
+//
+//            self.channelUrl = meetingRoomChannel!.name
 
             successHandler?()
-        }
+//        }
     }
 
     func getAllUsers(notConnected: SBDOpenChannel?, successHandler: (([SBDUser]?) -> Void)?) {
