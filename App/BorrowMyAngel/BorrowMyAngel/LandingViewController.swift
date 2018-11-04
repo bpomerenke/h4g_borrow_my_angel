@@ -21,6 +21,9 @@ class LandingViewController: UIViewController {
         UserSession.sharedInstance.setHandle()
     }
     
+    @IBAction func comeBack(unwindSegue: UIStoryboardSegue){
+        print("did it...came back")
+    }
     @IBAction func share(_ sender: Any) {
     
         UIGraphicsBeginImageContext(view.frame.size)
