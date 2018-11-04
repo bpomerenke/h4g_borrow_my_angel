@@ -348,12 +348,12 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cro-dn-yQW">
-                                        <rect key="frame" x="107.5" y="413" width="150" height="80"/>
+                                        <rect key="frame" x="134.5" y="491" width="76" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="LkE-hO-5E5"/>
-                                            <constraint firstAttribute="height" constant="80" id="dQj-ed-zCE"/>
+                                            <constraint firstAttribute="width" constant="76" id="6kv-FK-lxC"/>
+                                            <constraint firstAttribute="height" constant="20" id="UdD-oa-dmd"/>
                                         </constraints>
-                                        <state key="normal" image="Cause_Mo_logo"/>
+                                        <state key="normal" image="donate_button"/>
                                         <connections>
                                             <action selector="gotoCauseMomentum:" destination="3PV-7c-ZW2" eventType="touchUpInside" id="ZCR-xO-UTx"/>
                                         </connections>
@@ -361,7 +361,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="cro-dn-yQW" firstAttribute="top" secondItem="VYm-L3-12b" secondAttribute="bottom" constant="34" id="Tqu-YA-TFC"/>
+                                    <constraint firstAttribute="bottom" secondItem="cro-dn-yQW" secondAttribute="bottom" constant="20" id="Buh-Pb-dIw"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-Y1-z40">
@@ -456,7 +456,7 @@
                             <constraint firstItem="bzH-IB-y2v" firstAttribute="top" secondItem="UtC-cf-zn5" secondAttribute="bottom" constant="10" id="oNa-lt-v6w"/>
                             <constraint firstItem="MSs-Pi-uyO" firstAttribute="centerY" secondItem="Mjf-wT-BQ8" secondAttribute="centerY" id="qJM-oV-Nyi"/>
                             <constraint firstItem="edG-Pg-0Ky" firstAttribute="top" secondItem="Z8e-Yr-rKb" secondAttribute="top" constant="16" id="qQy-BX-I36"/>
-                            <constraint firstItem="cro-dn-yQW" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" constant="10" id="vzF-F8-zbw"/>
+                            <constraint firstItem="cro-dn-yQW" firstAttribute="centerX" secondItem="Z8e-Yr-rKb" secondAttribute="centerX" id="vzF-F8-zbw"/>
                             <constraint firstItem="Z8e-Yr-rKb" firstAttribute="trailing" secondItem="edG-Pg-0Ky" secondAttribute="trailing" constant="15" id="xke-GB-CuZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z8e-Yr-rKb"/>
@@ -810,12 +810,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cause_Mo_logo" width="202" height="105"/>
         <image name="Sign_in_button" width="700" height="242"/>
         <image name="Welcome_logo" width="366" height="206"/>
         <image name="become_an_angel" width="286" height="33"/>
         <image name="chat_as_guest_button" width="270" height="75"/>
         <image name="create_acct_button" width="270" height="75"/>
+        <image name="donate_button" width="362" height="96"/>
         <image name="facebook_icon" width="48" height="49"/>
         <image name="first" width="30" height="30"/>
         <image name="instagram_icon" width="48" height="49"/>
