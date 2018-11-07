@@ -11,6 +11,9 @@
 		5A40C62C218D7804001E8412 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62B218D7804001E8412 /* MessagingViewController.swift */; };
 		5A40C62E218D7E64001E8412 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C62D218D7E64001E8412 /* LoginViewController.swift */; };
 		5A460ABF218D8D1900FA77F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A460ABD218D8D1900FA77F7 /* Main.storyboard */; };
+		5A6E384521929D4E0015D6A0 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6E384321929D4E0015D6A0 /* Registration.storyboard */; };
+		5A6E384721929D830015D6A0 /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6E384621929D830015D6A0 /* Resources.storyboard */; };
+		5A6E384921929DB60015D6A0 /* Messaging.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6E384821929DB60015D6A0 /* Messaging.storyboard */; };
 		5A7FE0AE218D934B005F99A2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FE0AD218D934B005F99A2 /* Podfile */; };
 		5A7FE0B0218DFC3F005F99A2 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FE0AF218DFC3F005F99A2 /* UserSession.swift */; };
 		5A935CE0218E1E5500077597 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A935CDF218E1E5500077597 /* LandingViewController.swift */; };
@@ -45,6 +48,9 @@
 		5A40C62B218D7804001E8412 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		5A40C62D218D7E64001E8412 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A460ABE218D8D1900FA77F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A6E384421929D4E0015D6A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BorrowMyAngel/Base.lproj/Registration.storyboard; sourceTree = "<group>"; };
+		5A6E384621929D830015D6A0 /* Resources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Resources.storyboard; sourceTree = "<group>"; };
+		5A6E384821929DB60015D6A0 /* Messaging.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messaging.storyboard; sourceTree = "<group>"; };
 		5A7FE0AD218D934B005F99A2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5A7FE0AF218DFC3F005F99A2 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		5A935CDF218E1E5500077597 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +97,10 @@
 		5B10F671218D062200344011 = {
 			isa = PBXGroup;
 			children = (
+				5A6E384821929DB60015D6A0 /* Messaging.storyboard */,
+				5A6E384621929D830015D6A0 /* Resources.storyboard */,
+				5A6E384321929D4E0015D6A0 /* Registration.storyboard */,
+				5A460ABD218D8D1900FA77F7 /* Main.storyboard */,
 				5A7FE0AD218D934B005F99A2 /* Podfile */,
 				5B10F67C218D062200344011 /* BorrowMyAngel */,
 				5B10F693218D062500344011 /* BorrowMyAngelTests */,
@@ -126,7 +136,6 @@
 				5B21400A218E23FC00AA5CA8 /* Data */,
 				5B21400F218E394100AA5CA8 /* Extensions */,
 				5B10F688218D062500344011 /* LaunchScreen.storyboard */,
-				5A460ABD218D8D1900FA77F7 /* Main.storyboard */,
 				5B214007218E239F00AA5CA8 /* Models */,
 				5A935CE1218E51AF00077597 /* MessageTableViewCell.swift */,
 				5A935CE5218EDDEC00077597 /* CreateAccountViewController.swift */,
@@ -270,8 +279,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A6E384521929D4E0015D6A0 /* Registration.storyboard in Resources */,
 				5A460ABF218D8D1900FA77F7 /* Main.storyboard in Resources */,
+				5A6E384721929D830015D6A0 /* Resources.storyboard in Resources */,
 				5B10F68A218D062500344011 /* LaunchScreen.storyboard in Resources */,
+				5A6E384921929DB60015D6A0 /* Messaging.storyboard in Resources */,
 				5A7FE0AE218D934B005F99A2 /* Podfile in Resources */,
 				5B10F687218D062500344011 /* Assets.xcassets in Resources */,
 			);
@@ -393,6 +405,14 @@
 				5A460ABE218D8D1900FA77F7 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A6E384321929D4E0015D6A0 /* Registration.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A6E384421929D4E0015D6A0 /* Base */,
+			);
+			name = Registration.storyboard;
 			sourceTree = "<group>";
 		};
 		5B10F688218D062500344011 /* LaunchScreen.storyboard */ = {
